@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>LinkBasedGame</title>
+<title>Le Correspondant Perdu</title>
 <style title="Twine CSS">@-webkit-keyframes appear{0%{opacity:0}to{opacity:1}}@keyframes appear{0%{opacity:0}to{opacity:1}}@-webkit-keyframes fade-in-out{0%,to{opacity:0}50%{opacity:1}}@keyframes fade-in-out{0%,to{opacity:0}50%{opacity:1}}@-webkit-keyframes rumble{50%{-webkit-transform:translateY(-0.2em);transform:translateY(-0.2em)}}@keyframes rumble{50%{-webkit-transform:translateY(-0.2em);transform:translateY(-0.2em)}}@-webkit-keyframes shudder{50%{-webkit-transform:translateX(0.2em);transform:translateX(0.2em)}}@keyframes shudder{50%{-webkit-transform:translateX(0.2em);transform:translateX(0.2em)}}@-webkit-keyframes box-flash{0%{background-color:white;color:white}}@keyframes box-flash{0%{background-color:white;color:white}}@-webkit-keyframes pulse{0%{-webkit-transform:scale(0, 0);transform:scale(0, 0)}20%{-webkit-transform:scale(1.2, 1.2);transform:scale(1.2, 1.2)}40%{-webkit-transform:scale(0.9, 0.9);transform:scale(0.9, 0.9)}60%{-webkit-transform:scale(1.05, 1.05);transform:scale(1.05, 1.05)}80%{-webkit-transform:scale(0.925, 0.925);transform:scale(0.925, 0.925)}to{-webkit-transform:scale(1, 1);transform:scale(1, 1)}}@keyframes pulse{0%{-webkit-transform:scale(0, 0);transform:scale(0, 0)}20%{-webkit-transform:scale(1.2, 1.2);transform:scale(1.2, 1.2)}40%{-webkit-transform:scale(0.9, 0.9);transform:scale(0.9, 0.9)}60%{-webkit-transform:scale(1.05, 1.05);transform:scale(1.05, 1.05)}80%{-webkit-transform:scale(0.925, 0.925);transform:scale(0.925, 0.925)}to{-webkit-transform:scale(1, 1);transform:scale(1, 1)}}@-webkit-keyframes shudder-in{0%, to{-webkit-transform:translateX(0em);transform:translateX(0em)}5%, 25%, 45%{-webkit-transform:translateX(-1em);transform:translateX(-1em)}15%, 35%, 55%{-webkit-transform:translateX(1em);transform:translateX(1em)}65%{-webkit-transform:translateX(-0.6em);transform:translateX(-0.6em)}75%{-webkit-transform:translateX(0.6em);transform:translateX(0.6em)}85%{-webkit-transform:translateX(-0.2em);transform:translateX(-0.2em)}95%{-webkit-transform:translateX(0.2em);transform:translateX(0.2em)}}@keyframes shudder-in{0%, to{-webkit-transform:translateX(0em);transform:translateX(0em)}5%, 25%, 45%{-webkit-transform:translateX(-1em);transform:translateX(-1em)}15%, 35%, 55%{-webkit-transform:translateX(1em);transform:translateX(1em)}65%{-webkit-transform:translateX(-0.6em);transform:translateX(-0.6em)}75%{-webkit-transform:translateX(0.6em);transform:translateX(0.6em)}85%{-webkit-transform:translateX(-0.2em);transform:translateX(-0.2em)}95%{-webkit-transform:translateX(0.2em);transform:translateX(0.2em)}}@-webkit-keyframes rumble-in{0%, to{-webkit-transform:translateY(0em);transform:translateY(0em)}5%, 25%, 45%{-webkit-transform:translateY(-1em);transform:translateY(-1em)}15%, 35%, 55%{-webkit-transform:translateY(1em);transform:translateY(1em)}65%{-webkit-transform:translateY(-0.6em);transform:translateY(-0.6em)}75%{-webkit-transform:translateY(0.6em);transform:translateY(0.6em)}85%{-webkit-transform:translateY(-0.2em);transform:translateY(-0.2em)}95%{-webkit-transform:translateY(0.2em);transform:translateY(0.2em)}}@keyframes rumble-in{0%, to{-webkit-transform:translateY(0em);transform:translateY(0em)}5%, 25%, 45%{-webkit-transform:translateY(-1em);transform:translateY(-1em)}15%, 35%, 55%{-webkit-transform:translateY(1em);transform:translateY(1em)}65%{-webkit-transform:translateY(-0.6em);transform:translateY(-0.6em)}75%{-webkit-transform:translateY(0.6em);transform:translateY(0.6em)}85%{-webkit-transform:translateY(-0.2em);transform:translateY(-0.2em)}95%{-webkit-transform:translateY(0.2em);transform:translateY(0.2em)}}@-webkit-keyframes slide-right{0%{-webkit-transform:translateX(-100vw);transform:translateX(-100vw)}}@keyframes slide-right{0%{-webkit-transform:translateX(-100vw);transform:translateX(-100vw)}}@-webkit-keyframes slide-left{0%{-webkit-transform:translateX(100vw);transform:translateX(100vw)}}@keyframes slide-left{0%{-webkit-transform:translateX(100vw);transform:translateX(100vw)}}@-webkit-keyframes slide-up{0%{-webkit-transform:translateY(100vh);transform:translateY(100vh)}}@keyframes slide-up{0%{-webkit-transform:translateY(100vh);transform:translateY(100vh)}}@-webkit-keyframes slide-down{0%{-webkit-transform:translateY(-100vh);transform:translateY(-100vh)}}@keyframes slide-down{0%{-webkit-transform:translateY(-100vh);transform:translateY(-100vh)}}@-webkit-keyframes flicker{0%,29%,31%,63%,65%,77%,79%,86%,88%,91%,93%{opacity:0}30%{opacity:0.2}64%{opacity:0.4}78%{opacity:0.6}87%{opacity:0.8}92%, to{opacity:1}}@keyframes flicker{0%,29%,31%,63%,65%,77%,79%,86%,88%,91%,93%{opacity:0}30%{opacity:0.2}64%{opacity:0.4}78%{opacity:0.6}87%{opacity:0.8}92%, to{opacity:1}}.debug-mode tw-expression[type=hookref]{background-color:rgba(115,123,140,0.15)}.debug-mode tw-expression[type=hookref]::after{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:"?" attr(name)}.debug-mode tw-expression[type=variable]{background-color:rgba(140,128,115,0.15)}.debug-mode tw-expression[type=variable]::after{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:"$" attr(name)}.debug-mode tw-expression[type=tempVariable]{background-color:rgba(140,128,115,0.15)}.debug-mode tw-expression[type=tempVariable]::after{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:"_" attr(name)}.debug-mode tw-expression[type=macro]:nth-of-type(4n+0){background-color:rgba(136,153,102,0.15)}.debug-mode tw-expression[type=macro]:nth-of-type(2n+1){background-color:rgba(102,153,102,0.15)}.debug-mode tw-expression[type=macro]:nth-of-type(4n+2){background-color:rgba(102,153,136,0.15)}.debug-mode tw-expression[type=macro][name="for"],.debug-mode tw-expression[type=macro][name="loop"],.debug-mode tw-expression[type=macro][name="print"],.debug-mode tw-expression[type=macro][name="enchant"],.debug-mode tw-expression[type=macro][name="display"]{background-color:rgba(0,170,255,0.1) !important}.debug-mode tw-expression[type=macro][name="if"],.debug-mode tw-expression[type=macro][name="if"]+tw-hook:not([name]),.debug-mode tw-expression[type=macro][name="unless"],.debug-mode tw-expression[type=macro][name="unless"]+tw-hook:not([name]),.debug-mode tw-expression[type=macro][name="elseif"],.debug-mode tw-expression[type=macro][name="elseif"]+tw-hook:not([name]),.debug-mode tw-expression[type=macro][name="else"],.debug-mode tw-expression[type=macro][name="else"]+tw-hook:not([name]){background-color:rgba(0,255,0,0.1) !important}.debug-mode tw-expression[type=macro][name="hidden"],.debug-mode tw-expression[type=macro].false{background-color:rgba(255,0,0,0.2) !important}.debug-mode tw-expression[type=macro][name="hidden"]+tw-hook:not([name]),.debug-mode tw-expression[type=macro].false+tw-hook:not([name]){display:none}.debug-mode tw-expression[type=macro][name="either"],.debug-mode tw-expression[type=macro][name="a"],.debug-mode tw-expression[type=macro][name="dm"],.debug-mode tw-expression[type=macro][name="ds"],.debug-mode tw-expression[type=macro][name="array"],.debug-mode tw-expression[type=macro][name^="sub"],.debug-mode tw-expression[type=macro][name="altered"],.debug-mode tw-expression[type=macro][name="count"],.debug-mode tw-expression[type=macro][name^="data"],.debug-mode tw-expression[type=macro][name="find"],.debug-mode tw-expression[type=macro][name$="ed"],.debug-mode tw-expression[type=macro][name$="-pass"],.debug-mode tw-expression[type=macro][name="range"],.debug-mode tw-expression[type=macro][name^="num"],.debug-mode tw-expression[type=macro][name^="str"],.debug-mode tw-expression[type=macro][name="text"],.debug-mode tw-expression[type=macro][name^="lower"],.debug-mode tw-expression[type=macro][name^="upper"],.debug-mode tw-expression[type=macro][name="words"],.debug-mode tw-expression[type=macro][name="ceil"],.debug-mode tw-expression[type=macro][name="floor"],.debug-mode tw-expression[type=macro][name="random"],.debug-mode tw-expression[type=macro][name="abs"],.debug-mode tw-expression[type=macro][name="cos"],.debug-mode tw-expression[type=macro][name="exp"],.debug-mode tw-expression[type=macro][name^="log"],.debug-mode tw-expression[type=macro][name="max"],.debug-mode tw-expression[type=macro][name="min"],.debug-mode tw-expression[type=macro][name="pow"],.debug-mode tw-expression[type=macro][name="sign"],.debug-mode tw-expression[type=macro][name="sin"],.debug-mode tw-expression[type=macro][name="sqrt"],.debug-mode tw-expression[type=macro][name="tan"],.debug-mode tw-expression[type=macro][name="round"],.debug-mode tw-expression[type=macro][name^="hsl"],.debug-mode tw-expression[type=macro][name^="rgb"]{background-color:rgba(255,255,0,0.2) !important}.debug-mode tw-expression[type=macro][name$="-game"],.debug-mode tw-expression[type=macro][name="move"],.debug-mode tw-expression[type=macro][name="put"],.debug-mode tw-expression[type=macro][name="set"]{background-color:rgba(255,128,0,0.2) !important}.debug-mode tw-expression[type=macro][name^="link"],.debug-mode tw-expression[type=macro][name$="-link"],.debug-mode tw-expression[type=macro][name="dropdown"],.debug-mode tw-expression[type=macro][name^="click"],.debug-mode tw-expression[type=macro][name="goto"],.debug-mode tw-expression[type=macro][name="undo"],.debug-mode tw-expression[type=macro][name^="mouseo"]{background-color:rgba(32,191,223,0.2) !important}.debug-mode tw-expression[type=macro][name^="replace"],.debug-mode tw-expression[type=macro][name^="prepend"],.debug-mode tw-expression[type=macro][name^="append"],.debug-mode tw-expression[type=macro][name="show"],.debug-mode tw-expression[type=macro][name^="remove"]{background-color:rgba(223,96,32,0.2) !important}.debug-mode tw-expression[type=macro][name="event"],.debug-mode tw-expression[type=macro][name="live"]{background-color:rgba(32,32,223,0.2) !important}.debug-mode tw-expression[type=macro][name="align"],.debug-mode tw-expression[type=macro][name^="colo"],.debug-mode tw-expression[type=macro][name="background"],.debug-mode tw-expression[type=macro][name="css"],.debug-mode tw-expression[type=macro][name="font"],.debug-mode tw-expression[type=macro][name="hook"],.debug-mode tw-expression[type=macro][name$="-style"],.debug-mode tw-expression[type=macro][name^="text-"],.debug-mode tw-expression[type=macro][name^="transition"],.debug-mode tw-expression[type=macro][name^="t8n"],.debug-mode tw-expression[type=macro][name="live"]{background-color:rgba(255,191,0,0.2) !important}.debug-mode tw-expression[type=macro]::before{content:"(" attr(name) ":)";padding:0 0.5rem;font-size:1rem;vertical-align:middle;line-height:normal;background-color:inherit;border:1px solid rgba(255,255,255,0.5)}.debug-mode tw-hook{background-color:rgba(0,85,255,0.1) !important}.debug-mode tw-hook::before{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:"["}.debug-mode tw-hook::after{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:"]"}.debug-mode tw-hook[name]::after{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:"]<" attr(name) "|"}.debug-mode tw-pseudo-hook{background-color:rgba(255,170,0,0.1) !important}.debug-mode tw-collapsed::before{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:"{"}.debug-mode tw-collapsed::after{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:"}"}.debug-mode tw-verbatim::before,.debug-mode tw-verbatim::after{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:"`"}.debug-mode tw-align[style*="text-align: center"]{background:linear-gradient(to right, rgba(255,204,189,0) 0%, rgba(255,204,189,0.25) 50%, rgba(255,204,189,0) 100%)}.debug-mode tw-align[style*="text-align: left"]{background:linear-gradient(to right, rgba(255,204,189,0.25) 0%, rgba(255,204,189,0) 100%)}.debug-mode tw-align[style*="text-align: right"]{background:linear-gradient(to right, rgba(255,204,189,0) 0%, rgba(255,204,189,0.25) 100%)}.debug-mode tw-column{background-color:rgba(189,228,255,0.2)}.debug-mode tw-enchantment{animation:enchantment 0.5s infinite;-webkit-animation:enchantment 0.5s infinite;border:1px solid}.debug-mode tw-link::after,.debug-mode tw-broken-link::after{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:attr(passage-name)}.debug-mode tw-include{background-color:rgba(204,128,51,0.1)}.debug-mode tw-include::before{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:attr(type) ' "' attr(title) '"'}@keyframes enchantment{0%,to{border-color:#ffb366}50%{border-color:#6fc}}@-webkit-keyframes enchantment{0%,to{border-color:#ffb366}50%{border-color:#6fc}}tw-debugger{position:fixed;box-sizing:border-box;bottom:0;right:0;z-index:999999;min-width:10em;min-height:1em;padding:0em 1em 1em 1em;font-size:1.25em;font-family:sans-serif;color:#000;border-left:solid #000 2px;border-top:solid #000 2px;border-top-left-radius:.5em;background:#fff;opacity:1}tw-debugger select{margin-right:1em;width:12em}tw-debugger button{border-radius:3px;border:solid #999 1px;margin:auto 4px;background-color:#fff;font-size:inherit;color:#000}tw-debugger button.enabled{background-color:#eee;box-shadow:inset #ddd 3px 5px 0.5em}tw-debugger .panel{display:-webkit-box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-direction:normal;-webkit-box-orient:vertical;-webkit-flex-direction:column;-moz-flex-direction:column;-ms-flex-direction:column;flex-direction:column;position:absolute;bottom:100%;left:-2px;right:0;padding:1em;max-height:40vh;overflow-y:scroll;overflow-x:hidden;z-index:999998;background:#fff;border:inherit;border-bottom:solid #999 2px;border-top-left-radius:.5em;border-bottom-left-radius:.5em;font-size:0.8em}tw-debugger .panel:empty,tw-debugger .panel[hidden]{display:none}tw-debugger .panel table{border-spacing:0px}tw-debugger .variable-row{display:-webkit-box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-direction:normal;-webkit-box-orient:horizontal;-webkit-flex-direction:row;-moz-flex-direction:row;-ms-flex-direction:row;flex-direction:row;flex-shrink:0}tw-debugger .variable-row:nth-child(2n){background:#EEE}tw-debugger .variable-name{display:inline-block;width:50%}tw-debugger .temporary-variable-scope{opacity:0.8;font-size:0.75em}tw-debugger .temporary-variable-scope::before{content:" in "}tw-debugger .global::before{content:"$"}tw-debugger .temporary::before{content:"_"}tw-debugger .variable-path{opacity:0.4}tw-debugger .variable-value{display:inline-block;width:50%}tw-debugger .error-row{background-color:rgba(230,101,204,0.3)}tw-debugger .error-row:nth-child(2n){background-color:rgba(237,145,219,0.3)}tw-debugger .error-row *{padding:0.25em 0.5em}tw-debugger .error-row .error-message{cursor:help}tw-debugger .panel-source{font-family:monospace;overflow-x:scroll;white-space:pre}tw-debugger .tabs{padding-bottom:0.5em}tw-debugger .tab{border-radius:0px 0px 0.5em 0.5em;border-top:none}tw-dialog{z-index:999997;position:fixed;left:auto;right:auto;bottom:auto;top:auto;border:#fff solid 2px;padding:2em;color:#fff;background-color:#000;display:block;max-width:50vw;max-height:75vh;overflow:hidden}tw-dialog input[type=text]{font-size:inherit;width:100%}tw-backdrop{z-index:999996;position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.8);display:flex;align-items:center;justify-content:center}tw-link,.link,tw-icon,.enchantment-clickblock{cursor:pointer}tw-link,.enchantment-link{color:#4169E1;font-weight:bold;text-decoration:none;transition:color 0.2s ease-in-out}tw-passage tw-enchantment[style^="color"] tw-link:not(:hover),tw-passage tw-enchantment[style*=" color"] tw-link:not(:hover),tw-passage tw-enchantment[style^="color"] .enchantment-link:not(:hover),tw-passage tw-enchantment[style*=" color"] .enchantment-link:not(:hover){color:inherit}tw-link:hover,.enchantment-link:hover{color:#00bfff}tw-link:active,.enchantment-link:active{color:#DD4B39}.visited{color:#6941e1}tw-passage tw-enchantment[style^="color"] .visited:not(:hover),tw-passage tw-enchantment[style*=" color"] .visited:not(:hover){color:inherit}.visited:hover{color:#E3E}tw-broken-link{color:#993333;border-bottom:2px solid #993333;cursor:not-allowed}tw-passage tw-enchantment[style^="color"] tw-broken-link:not(:hover),tw-passage tw-enchantment[style*=" color"] tw-broken-link:not(:hover){color:inherit}.enchantment-mouseover{border-bottom:1px dashed #666}.enchantment-mouseout{border:rgba(64,149,191,0.25) 1px solid}.enchantment-mouseout:hover{background-color:rgba(64,149,191,0.25);border:transparent 1px solid;border-radius:0.2em}.enchantment-clickblock{box-shadow:inset 0 0 0 0.5vmax;display:block;color:rgba(65,105,225,0.5);transition:color 0.2s ease-in-out}.enchantment-clickblock:hover{color:rgba(0,191,255,0.5)}.enchantment-clickblock:active{color:rgba(222,78,59,0.5)}html{margin:0;height:100%;overflow-x:hidden}*,:before,:after{position:relative;box-sizing:inherit}body{margin:0;height:100%}tw-storydata{display:none}tw-story{display:-webkit-box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-direction:normal;-webkit-box-orient:vertical;-webkit-flex-direction:column;-moz-flex-direction:column;-ms-flex-direction:column;flex-direction:column;font:100% Georgia, serif;box-sizing:border-box;width:100%;min-height:100%;font-size:1.5em;line-height:1.5em;padding:5% 20%;margin:0;overflow:hidden;background-color:#000;color:#fff}tw-story br[data-cons]{display:block;height:0;margin:0.8ex 0}tw-story select{background-color:transparent;font:inherit;border-style:solid;padding:2px}tw-story select:not([disabled]){color:inherit}tw-passage{display:block}tw-sidebar{left:-5em;width:3em;position:absolute;text-align:center;display:block}tw-icon{display:block;margin:0.5em 0;opacity:0.2;font-size:2.75em}tw-icon:hover{opacity:0.4}tw-hook:empty,tw-expression:empty{display:none}tw-error{display:inline-block;border-radius:0.2em;padding:0.2em;font-size:1rem;cursor:help}tw-error.error{background-color:rgba(223,58,190,0.4);color:#fff}tw-error.warning{background-color:rgba(223,140,58,0.4);color:#fff;display:none}.debug-mode tw-error.warning{display:inline}tw-error-explanation{display:block;font-size:0.8rem;line-height:1rem}tw-error-explanation-button{cursor:pointer;line-height:0em;border-radius:1px;border:1px solid black;font-size:0.8rem;margin:0 0.4rem;opacity:0.5}tw-error-explanation-button .folddown-arrowhead{display:inline-block}tw-notifier{border-radius:0.2em;padding:0.2em;font-size:1rem;background-color:rgba(223,182,58,0.4);display:none}.debug-mode tw-notifier{display:inline}tw-notifier::before{content:attr(message)}tw-colour{border:1px solid black;display:inline-block;width:1em;height:1em}h1{font-size:3em}h2{font-size:2.25em}h3{font-size:1.75em}h1,h2,h3,h4,h5,h6{line-height:1em;margin:0.3em 0 0.6em 0}pre{font-size:1rem;line-height:initial}small{font-size:70%}big{font-size:120%}mark{color:rgba(0,0,0,0.6);background-color:#ff9}ins{color:rgba(0,0,0,0.6);background-color:rgba(255,242,204,0.5);border-radius:0.5em;box-shadow:0em 0em 0.2em #ffe699;text-decoration:none}center{text-align:center;margin:0 auto;width:60%}blink{text-decoration:none;animation:fade-in-out 1s steps(1, end) infinite alternate;-webkit-animation:fade-in-out 1s steps(1, end) infinite alternate}tw-align{display:block}tw-columns{display:-webkit-box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-direction:normal;-webkit-box-orient:horizontal;-webkit-flex-direction:row;-moz-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;-webkit-justify-content:space-between;-moz-justify-content:space-between;justify-content:space-between}tw-outline{color:white;text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000}tw-shadow{text-shadow:0.08em 0.08em 0.08em #000}tw-emboss{text-shadow:0.08em 0.08em 0em #000;color:white}tw-condense{letter-spacing:-0.08em}tw-expand{letter-spacing:0.1em}tw-blur{color:transparent;text-shadow:0em 0em 0.08em #000}tw-blurrier{color:transparent;text-shadow:0em 0em 0.2em #000}tw-blurrier::selection{background-color:transparent;color:transparent}tw-blurrier::-moz-selection{background-color:transparent;color:transparent}tw-smear{color:transparent;text-shadow:0em 0em 0.02em rgba(0,0,0,0.75),-0.2em 0em 0.5em rgba(0,0,0,0.5),0.2em 0em 0.5em rgba(0,0,0,0.5)}tw-mirror{display:inline-block;transform:scaleX(-1);-webkit-transform:scaleX(-1)}tw-upside-down{display:inline-block;transform:scaleY(-1);-webkit-transform:scaleY(-1)}tw-fade-in-out{text-decoration:none;animation:fade-in-out 2s ease-in-out infinite alternate;-webkit-animation:fade-in-out 2s ease-in-out infinite alternate}tw-rumble{-webkit-animation:rumble linear 0.1s 0s infinite;animation:rumble linear 0.1s 0s infinite;display:inline-block}tw-shudder{-webkit-animation:shudder linear 0.1s 0s infinite;animation:shudder linear 0.1s 0s infinite;display:inline-block}tw-shudder-in{animation:shudder-in 1s ease-out;-webkit-animation:shudder-in 1s ease-out}.transition-in{-webkit-animation:appear 0ms step-start;animation:appear 0ms step-start}.transition-out{-webkit-animation:appear 0ms step-end;animation:appear 0ms step-end}[data-t8n^=dissolve].transition-in{-webkit-animation:appear .8s;animation:appear .8s}[data-t8n^=dissolve].transition-out{-webkit-animation:appear .8s reverse;animation:appear .8s reverse}[data-t8n^=shudder].transition-in{display:inline-block;-webkit-animation:shudder-in .8s;animation:shudder-in .8s}[data-t8n^=shudder].transition-out{display:inline-block;-webkit-animation:shudder-in .8s reverse;animation:shudder-in .8s reverse}[data-t8n^=rumble].transition-in{display:inline-block;-webkit-animation:rumble-in .8s;animation:rumble-in .8s}[data-t8n^=rumble].transition-out{display:inline-block;-webkit-animation:rumble-in .8s reverse;animation:rumble-in .8s reverse}[data-t8n^=boxflash].transition-in{-webkit-animation:box-flash .8s;animation:box-flash .8s}[data-t8n^=pulse].transition-in{-webkit-animation:pulse .8s;animation:pulse .8s;display:inline-block}[data-t8n^=pulse].transition-out{-webkit-animation:pulse .8s reverse;animation:pulse .8s reverse;display:inline-block}[data-t8n^=slideleft].transition-in{-webkit-animation:slide-left .8s;animation:slide-left .8s;display:inline-block}[data-t8n^=slideleft].transition-out{-webkit-animation:slide-right .8s reverse;animation:slide-right .8s reverse;display:inline-block}[data-t8n^=slideright].transition-in{-webkit-animation:slide-right .8s;animation:slide-right .8s;display:inline-block}[data-t8n^=slideright].transition-out{-webkit-animation:slide-left .8s reverse;animation:slide-left .8s reverse;display:inline-block}[data-t8n^=slideup].transition-in{-webkit-animation:slide-up .8s;animation:slide-up .8s;display:inline-block}[data-t8n^=slideup].transition-out{-webkit-animation:slide-down .8s reverse;animation:slide-down .8s reverse;display:inline-block}[data-t8n^=slidedown].transition-in{-webkit-animation:slide-down .8s;animation:slide-down .8s;display:inline-block}[data-t8n^=slidedown].transition-out{-webkit-animation:slide-up .8s reverse;animation:slide-up .8s reverse;display:inline-block}[data-t8n^=flicker].transition-in{-webkit-animation:flicker .8s;animation:flicker .8s}[data-t8n^=flicker].transition-out{-webkit-animation:flicker .8s reverse;animation:flicker .8s reverse}[data-t8n$=fast]{animation-duration:.4s;-webkit-animation-duration:.4s}[data-t8n$=slow]{animation-duration:1.6s;-webkit-animation-duration:1.6s}
 </style>
 </head>
@@ -11,13 +11,12 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="LinkBasedGame" startnode="1" creator="Twine" creator-version="2.3.5" ifid="56ED893F-B604-4D94-8814-C5CE614EBC87" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="start" tags="" position="668,277" size="100,100">You are sitting at the desk in your office peacefully gazing at some birds perched on a tree outside of your window. As your mind begins to wander and the birds begin to turn into black dots floating along the horizon, you hear a knock from the front door.
+<tw-storydata name="Le Correspondant Perdu" startnode="1" creator="Twine" creator-version="2.3.5" ifid="56ED893F-B604-4D94-8814-C5CE614EBC87" zoom="0.6" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="start" tags="" position="668,277" size="100,100">You are sitting at the desk in your office peacefully gazing at some birds perched on a tree outside of your window. As your mind begins to wander and the birds begin to turn into black dots floating along the horizon, you hear a knock from the front door.
 
 You wonder to yourself, &quot;Who could that be?&quot; You were not expecting any visitors during this time. &quot;Should I answer the door?&quot;
 
 [[&gt;&gt;Answer the Door&lt;&lt;|Answer Door]]
-
-[[&gt;&gt;Ignore the knocking until the scary noises go away&lt;&lt;|Ignore Knocking]]</tw-passagedata><tw-passagedata pid="2" name="Answer Door" tags="" position="593,427" size="100,100">{
+[[&gt;&gt;Ignore the knocking until it goes away&lt;&lt;|Ignore Knocking]]</tw-passagedata><tw-passagedata pid="2" name="Answer Door" tags="" position="788,424" size="100,100">{
 The (if: $numDoorIgnores &gt; 0)[disgruntled-looking] postal delivery man for your office buliding (if: $numDoorIgnores &gt; 0)[frowns] (else:)[smiles] at you holding a package in his hand. Before you can greet him, the delivery man says, &quot;Hey John, got another delivery for you.&quot;
 &lt;br&gt;
 &lt;br&gt;
@@ -41,30 +40,33 @@ As soon as you receive the package he immediately leaves, off to deliver the nex
 	(set: $thoughtAboutPierre to false)
 	(set: $goodFriendMeter to $goodFriendMeter-1)
 ]
-}</tw-passagedata><tw-passagedata pid="3" name="Ignore Knocking" tags="" position="1058,298" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="3" name="Ignore Knocking" tags="" position="553,426" size="100,100">{
 (set: $numDoorIgnores to $numDoorIgnores+1)
 (if: $numDoorIgnores is 1) [
 	You choose to ignore the knocking, but it only seems to be getting louder. The thought occurs to you that you probably should answer the door, but you still feel unsure. You think to yourself, &quot;Surely I must have had a reason not to answer the door in the first place, right?&quot; Soon enough the banging gets louder and seemingly more menacing. Do you choose to answer the door or ignore it?
 	&lt;br&gt;
-	[[Answer Door]]
 	&lt;br&gt;
-	[[Ignore the knocking until the scary noises go away|Ignore Knocking]]
+	[[&gt;&gt;Answer Door&lt;&lt;|Answer Door]]
+	&lt;br&gt;
+	[[&gt;&gt;Ignore the knocking until it goes away&lt;&lt;|Ignore Knocking]]
 ]
 (else-if: $numDoorIgnores is 2) [
 	Reason would indicate that at this point it feels right to open the door. Yet you can&#39;t shake the feeling that you just shouldn&#39;t do it. After all, your parents always taught you never to forget about &quot;stranger danger.&quot; Do you choose to answer the door or ignore it?
 	&lt;br&gt;
-	[[Answer Door]]
 	&lt;br&gt;
-	[[Ignore the knocking until the scary noises go away|Ignore Knocking]]
+	[[&gt;&gt;Answer Door&lt;&lt;|Answer Door]]
+	&lt;br&gt;
+	[[&gt;&gt;Ignore the knocking until it goes away&lt;&lt;|Ignore Knocking]]
 ]
 (else-if: $numDoorIgnores &gt; 2) [
 	The knocking briefly stops for a moment before you can catch a breath. The world seems peaceful --almost too peaceful-- for a brief moment before the tranquility is suddenly snatched away by the abrupt sound of a continuous stream of knocks. &quot;Whatever this person is trying to tell me must be important,&quot; you think to yourself. &quot;Should I open the door?&quot;
 	&lt;br&gt;
-	[[Answer Door]]
 	&lt;br&gt;
-	[(link-goto: &quot;Ignore the knocking until the scary noises go away&quot;, &quot;Ignore Knocking&quot;)]&lt;b| (mouseover-replace: ?b)[(text-style: &quot;strike&quot;)[Ignore the knocking until the scary noises go away]]
+	[[&gt;&gt;Answer Door&lt;&lt;|Answer Door]]
+	&lt;br&gt;
+	[(link-goto: &quot;&gt;&gt;Ignore the knocking until it goes away&lt;&lt;&quot;, &quot;Ignore Knocking&quot;)]&lt;b| (mouseover-replace: ?b)[(text-style: &quot;strike&quot;)[&gt;&gt;Ignore the knocking until it goes away&lt;&lt;]]
 ]
-}</tw-passagedata><tw-passagedata pid="4" name="Set vars" tags="startup" position="336,313" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="4" name="Set vars" tags="startup" position="169,683" size="100,100">{
 (set: $numDoorIgnores to 0)
 (set: $numThoughtsAboutPierre to 0)
 (set: $inventory to (array:))
@@ -80,33 +82,35 @@ As soon as you receive the package he immediately leaves, off to deliver the nex
 (set: $readMysteryManLetter to false)
 (set: $guess to &quot;&quot;)
 (set: $codeCracked to false)
-}</tw-passagedata><tw-passagedata pid="5" name="Open Package" tags="" position="569,563" size="100,100">You cautiously move the package to your desk and peer at it. (if: $numThoughtsAboutPierre is 0)[Part of you wants to see if it is from your lost penpal, Pierre, who stopped emailing you just a few months before. After all, you two were extremely close and it would be such a shame if you didn&#39;t figure out what happened to him.] The curiousity continues to gnaw at you as you reach for the box cutter sitting on your shelf.
+}</tw-passagedata><tw-passagedata pid="5" name="Open Package" tags="" position="539,554" size="100,100">You cautiously move the package to your desk and peer at it. (if: $numThoughtsAboutPierre is 0)[Part of you wants to see if it is from your lost penpal, Pierre, who stopped emailing you just a few months before. After all, you two were extremely close and it would be such a shame if you didn&#39;t figure out what happened to him.] The curiousity continues to gnaw at you as you reach for the box cutter sitting on your shelf.
 
 You furiously cut through the tape on the package until you begin to see what looks like a piece of parchment eloquently written on with blue ink.
 &quot;That&#39;s exactly how Pierre used to write to me,&quot; you think to yourself.
 &quot;I wonder if it could be him?&quot; Yet, something seems off about the box. Pierre would never send a letter in a box, he&#39;s too environmentally conscientious.
 
-You pull the letter out of the package and [[begin reading it|Read Pierre&#39;s Letter]].</tw-passagedata><tw-passagedata pid="6" name="Think About Pierre" tags="" position="764,567" size="100,100">{(set: $numThoughtsAboutPierre to $numThoughtsAboutPierre+1)}
+[[&gt;&gt;Begin reading the letter&lt;&lt;|Read Pierre&#39;s Letter]]</tw-passagedata><tw-passagedata pid="6" name="Think About Pierre" tags="" position="711,554" size="100,100">{(set: $numThoughtsAboutPierre to $numThoughtsAboutPierre+1)}
 Receiving this package takes you back to the good ol&#39; days when you would eagerly check your mailbox for another letter from Pierre. It seems crazy that he only went missing only a few months ago, just after the two of you had your 2-year penpal anniversary. Then again, you don&#39;t (text-style: &quot;italic&quot;)[know] if he went missing, it just seems like the only logical reason why he would stop sending you letters after all this time.
 
 You start to question yourself for the thousanth time and think, &quot;What if he just got tired of me? What if Pierre began to feel that writing letters to me was just a waste of time? How can I even know if he went missing?&quot;
 
 And as the self-doubt begins to consume you, you feel a panging urge to open the box to find out what happened to him.
 
-[[&gt;&gt;Open the Package&lt;&lt;|Open Package]]</tw-passagedata><tw-passagedata pid="7" name="Read Pierre&#39;s Letter" tags="" position="543,723" size="100,100">{
+[[&gt;&gt;Open the Package&lt;&lt;|Open Package]]</tw-passagedata><tw-passagedata pid="7" name="Read Pierre&#39;s Letter" tags="" position="543,722" size="100,100">{
 (display: &quot;PierreLetter&quot;)
 (display: &quot;end-of-line&quot;)
 (if: not($inventory contains &quot;translationDictionary&quot;)) [
 	The letter keeps going but your French is getting a bit worn after just a few months of not writing. You think it might be a good idea to grab your trusty translation dictionary on your desk to slowly translate each word until you have recreated an English version of the text.
 	&lt;br&gt;
-	(link: &quot;Pick up translation dictionary&quot;)[
+	&lt;br&gt;
+	(link: &quot;&gt;&gt;Pick up translation dictionary&lt;&lt;&quot;)[
 		(set: $inventory to $inventory+(a: &quot;translationDictionary&quot;))
 	]
 	&lt;br&gt;
-	[[Try reading the letter again|Read Pierre&#39;s Letter]]
+	[[&gt;&gt;Try reading the letter again&lt;&lt;|Read Pierre&#39;s Letter]]
 ]
 (else:) [
 	As you read the letter, you feel your heartbeat crawl to a near stop. This doesn&#39;t sound like Pierre at all, and why does he have to be so vague? You begin to wonder to yourself, &quot;Should I be concerned about this?&quot;
+	&lt;br&gt;
 	&lt;br&gt;
 	[[Yes|Concerned]]
 	&lt;br&gt;
@@ -140,39 +144,39 @@ And as the self-doubt begins to consume you, you feel a panging urge to open the
 	&lt;br&gt;
 	P.N.
 ]
-}</tw-passagedata><tw-passagedata pid="9" name="end-of-line" tags="" position="125,498" size="100,100">(color: &quot;Blue&quot;)[___________________________________________________________]</tw-passagedata><tw-passagedata pid="10" name="Concerned" tags="" position="439,1069" size="100,100">As you begin to worry about what happened to Pierre, you begin to think about the pile of old letters on your bookshelf that Pierre has sent to you. You think to yourself, &quot;Perhaps Pierre left a trail of hints in his old letters. He would be the kind of person to do something like that...&quot; However, you don&#39;t know what Pierre might have said to tip you off. Maybe I am just going crazy and nothing happened?
+}</tw-passagedata><tw-passagedata pid="9" name="end-of-line" tags="" position="181.66666666666669,524.6666666666666" size="100,100">(color: &quot;Blue&quot;)[___________________________________________________________]</tw-passagedata><tw-passagedata pid="10" name="Concerned" tags="" position="438,889" size="100,100">As you begin to worry about what happened to Pierre, you begin to think about the pile of old letters on your bookshelf that Pierre has sent to you. You think to yourself, &quot;Perhaps Pierre left a trail of hints in his old letters. He would be the kind of person to do something like that...&quot; However, you don&#39;t know what Pierre might have said to tip you off. Maybe I am just going crazy and nothing happened?
 	
-[[Dismiss your concerns|Not Concerned]]
-[[Go to bookshelf|Bookshelf]]</tw-passagedata><tw-passagedata pid="11" name="Not Concerned" tags="" position="635,1059" size="100,100">{
+[[&gt;&gt;Dismiss your concerns&lt;&lt;|Not Concerned]]
+[[&gt;&gt;Go to bookshelf&lt;&lt;|Bookshelf]]</tw-passagedata><tw-passagedata pid="11" name="Not Concerned" tags="" position="642,883" size="100,100">{
 	You begin to reason your way through the situation. &quot;Well, Pierre did always know how to take care of himself. After all, he was in the French military for years before he moved to the countryside to begin his small winery in Brittany.&quot; So, there truly shouldn&#39;t be a lot of concern for this situation, right? You continue to wrestle with your doubts and start to wonder if perhaps you should take a look at the old letters Pierre used to send you on top of your bookshelf.
 	&lt;br&gt;
 	&lt;br&gt;
-	(link: &quot;Forget about this issue and continue staring at the birds ouside&quot;)[As your thoughts start to drift, you begin to have an existential crisis. You think, &quot;No... no this can&#39;t be right. Pierre would never write something like that and I can&#39;t just give up before I even start looking into this.]
+	(link: &quot;&gt;&gt;Forget about this issue and continue staring at the birds ouside&lt;&lt;&quot;)[As your thoughts start to drift, you begin to have an existential crisis. You think, &quot;No... no this can&#39;t be right. Pierre would never write something like that and I can&#39;t just give up before I even start looking into this.]
 	&lt;br&gt;
-	[[Go to bookshelf|Bookshelf]]
+	[[&gt;&gt;Go to bookshelf&lt;&lt;|Bookshelf]]
 }</tw-passagedata><tw-passagedata pid="12" name="Location Display" tags="" position="970,796" size="100,100">You think to yourself, &quot;Hmm... what should I do now?&quot;
 
-[[Go to desk|Desk]]
-[[Go to bookshelf|Bookshelf]]
+[[&gt;&gt;Go to desk&lt;&lt;|Desk]]
+[[&gt;&gt;Go to bookshelf&lt;&lt;|Bookshelf]]
 {
 (if: not($letterRecipient is &quot;noone&quot;)) [
-	[[Leave the office and go to sleep|Entrance]]
+	[[&gt;&gt;Leave the office and go to sleep&lt;&lt;|Entrance]]
 ]
-}</tw-passagedata><tw-passagedata pid="13" name="Bookshelf" tags="" position="1000,1019" size="100,100">{(set: $currentLocation to &quot;bookshelf&quot;)}
+}</tw-passagedata><tw-passagedata pid="13" name="Bookshelf" tags="" position="949,976" size="100,100">{(set: $currentLocation to &quot;bookshelf&quot;)}
 This bookshelf contains many memories, from your old college soccer trophies to your miniature Buckingham Palace model from your trip to London. More importantly, you keep all of your letters here.
 
 As you look up, stacks and stacks of carefully filed letters seem to appear, becoming more dated as you scan the pile. Most of them are from Pierre, but some are between him and his relatives and friends that you met on your last trip to Paris a few years ago. Pierre asked if he could automatically forward new letters to you because he was going back to university in Paris and he didn&#39;t have enough room for all of them. Surely he would be fine if you went through them, right?
 
 {
 (if: not($inventory contains &quot;letters&quot;)) [
-	(link: &quot;Pick up letters and put them on the desk&quot;)[
+	(link: &quot;&gt;&gt;Pick up letters and put them on the desk&lt;&lt;&quot;)[
 		(set: $inventory to $inventory+(a: &quot;letters&quot;))
 		(goto: &quot;Letters On Desk&quot;)
 	]
 ]
 }
-[[Leave the bookshelf|Location Display]]
-</tw-passagedata><tw-passagedata pid="14" name="Desk" tags="" position="1174,881" size="100,100">{(set: $currentLocation to &quot;desk&quot;)}
+[[&gt;&gt;Leave the bookshelf&lt;&lt;|Location Display]]
+</tw-passagedata><tw-passagedata pid="14" name="Desk" tags="" position="1226,789" size="100,100">{(set: $currentLocation to &quot;desk&quot;)}
 {
 
 (if: $inventory contains &quot;MysteryManPackage&quot;) [
@@ -183,12 +187,14 @@ As you look up, stacks and stacks of carefully filed letters seem to appear, bec
 	(else:)[
 		It seems that unless The Mystery Man was lying, he probably sent this package to you. The question is, do you trust him? Should you open it and see what&#39;s inside?
 		&lt;br&gt;
-		[[Open the package|Open Mystery Man Package]]
+		&lt;br&gt;
+		[[&gt;&gt;Open the package&lt;&lt;|Open Mystery Man Package]]
 	]
 
 ]
 (else:)[
 	You sit at your desk, wondering what you should do. Pierre could be anywhere and there is only so many places in the world that you can check. 
+	&lt;br&gt;
 ]
 
 
@@ -198,12 +204,12 @@ As you look up, stacks and stacks of carefully filed letters seem to appear, bec
 
 (else:) [
 	&lt;br&gt;
-	[[Look at stack of papers|Letters On Desk]]
+	[[&gt;&gt;Look at stack of papers&lt;&lt;|Letters On Desk]]
 ]
 }
-[[Look out the window|Window]]
-[[Look at calendar|Calendar]]
-[[Leave the desk|Location Display]]</tw-passagedata><tw-passagedata pid="15" name="Letters On Desk" tags="" position="1261,1074" size="100,100">{
+[[&gt;&gt;Look out the window&lt;&lt;|Window]]
+[[&gt;&gt;Look at calendar&lt;&lt;|Calendar]]
+[[&gt;&gt;Leave the desk&lt;&lt;|Location Display]]</tw-passagedata><tw-passagedata pid="15" name="Letters On Desk" tags="" position="1187,1059" size="100,100">{
 (if: ($day is 16) and ($month is 2) and ($year is 1985)) [
 	You begin to sift through the pile of letters on your desk and notice that most of them are from Pierre&#39;s father and Alexandre. At first glance, the letters from his father seem to be very friendly and courteous, while the letters from Alexandre seem to be mostly about jokes and arranging meet-ups
 	&lt;br&gt;
@@ -227,12 +233,11 @@ As you look up, stacks and stacks of carefully filed letters seem to appear, bec
 	&lt;br&gt;
 ]
 
-(set: $letterRecipient to &quot;noone&quot;)
 (set: $letterChoice to &quot;none&quot;)
 (set: $letterBeingRead to &quot;none&quot;)
 
 (if: ($day &gt; 16) and ($month &gt;= 2) and ($year &gt;= 1985)) [
-	(link: &quot;Look through the letters from The Mystery Man&quot;) [
+	(link: &quot;&gt;&gt;Look through the letters from The Mystery Man&lt;&lt;&quot;) [
 		(if: $numMysteryManLetters&gt;1) [
 			(set: $letterChoice to &quot;MysteryMan&quot;)
 			(goto: &quot;Choose Letter&quot;)
@@ -245,9 +250,9 @@ As you look up, stacks and stacks of carefully filed letters seem to appear, bec
 	&lt;br&gt;
 ]
 
-[[Look through the letter from Pierre|ReadPierreLetter]]
+[[&gt;&gt;Look through the letter from Pierre&lt;&lt;|ReadPierreLetter]]
 &lt;br&gt;
-(link: &quot;Look through the letters from Pierre&#39;s father&quot;) [
+(link: &quot;&gt;&gt;Look through the letters from Pierre&#39;s father&lt;&lt;&quot;) [
 	(if: $numLucienLetters&gt;=1) [
 		(set: $letterChoice to &quot;Lucien&quot;)
 		(goto: &quot;Choose Letter&quot;)
@@ -258,7 +263,7 @@ As you look up, stacks and stacks of carefully filed letters seem to appear, bec
 	]
 ]
 &lt;br&gt;
-(link: &quot;Look through the letters from Alexandre&quot;) [
+(link: &quot;&gt;&gt;Look through the letters from Alexandre&lt;&lt;&quot;) [
 	(if: $numAlexandreLetters&gt;=1) [
 		(set: $letterChoice to &quot;Alexandre&quot;)
 		(goto: &quot;Choose Letter&quot;)
@@ -269,7 +274,7 @@ As you look up, stacks and stacks of carefully filed letters seem to appear, bec
 	]
 ]
 &lt;br&gt;
-[[Go to desk|Desk]]
+[[&gt;&gt;Go to desk&lt;&lt;|Desk]]
 }</tw-passagedata><tw-passagedata pid="16" name="FatherLetter" tags="" position="178,914" size="100,100">{
 (if: $letterBeingRead is &quot;Lucien0&quot;) [
 	Dear Pierre,
@@ -323,39 +328,39 @@ As you look up, stacks and stacks of carefully filed letters seem to appear, bec
 	(text: $month)/(text:$day-1)/(text: $year)
 ]
 
-}</tw-passagedata><tw-passagedata pid="17" name="ReadFatherLetters" tags="" position="1119,1226" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="17" name="ReadFatherLetters" tags="" position="1041,1222" size="100,100">{
 (display: &quot;FatherLetter&quot;)
 (display: &quot;end-of-line&quot;)
 &lt;br&gt;
-(if: $letterRecipient is &quot;noone&quot; and and $letterBeingRead is &quot;Lucien&quot;+(text: $numLucienLetters)) [
+(if: $letterRecipient is &quot;noone&quot; and $letterBeingRead is &quot;Lucien&quot;+(text: $numLucienLetters)) [
 	(display: &quot;Letter Responses&quot;)
 	&lt;br&gt;
-	(link: &quot;Write a letter to Lucien&quot;)[
+	(link: &quot;&gt;&gt;Write a letter to Lucien&lt;&lt;&quot;)[
 			(set: $letterRecipient to &quot;Lucien&quot;)
-			(goto: &quot;Write Letter&quot;)
+			(goto: &quot;Write Letter&quot;)	
 	]
+	&lt;br&gt;
 ]
-&lt;br&gt;
-[[Go back|Letters On Desk]]
-}</tw-passagedata><tw-passagedata pid="18" name="ReadAlexandreLetters" tags="" position="1372,1230" size="100,100">{
+[[&gt;&gt;Go back&lt;&lt;|Letters On Desk]]
+}</tw-passagedata><tw-passagedata pid="18" name="ReadAlexandreLetters" tags="" position="1355,1226" size="100,100">{
 (display: &quot;Alexandre Letter&quot;)
 (display: &quot;end-of-line&quot;)
 (display: &quot;Letter Responses&quot;)
 &lt;br&gt;
 (if: $letterRecipient is &quot;noone&quot; and $letterBeingRead is &quot;Alexandre&quot;+(text: $numAlexandreLetters)) [
-	(link: &quot;Write a letter to Alexandre&quot;)[
+	(link: &quot;&gt;&gt;Write a letter to Alexandre&lt;&lt;&quot;)[
 			(set: $letterRecipient to &quot;Alexandre&quot;)
 			(goto: &quot;Write Letter&quot;)
 	]
+	&lt;br&gt;
 ]
-&lt;br&gt;
-[[Go back|Letters On Desk]]
-}</tw-passagedata><tw-passagedata pid="19" name="Write Letter" tags="" position="1255,1398" size="100,100">You decide to write a letter to $letterRecipient in order to see if they can help. You try your best to put most of it in French but even with the translation dictionary the tenses aren&#39;t perfect. When you&#39;re done, you put the letter in an envelope and put it in the mailbox down at the front of your office building.
+[[&gt;&gt;Go back&lt;&lt;|Letters On Desk]]
+}</tw-passagedata><tw-passagedata pid="19" name="Write Letter" tags="" position="841,1304" size="100,100">You decide to write a letter to $letterRecipient in order to see if they can help. You try your best to put most of it in French but even with the translation dictionary the tenses aren&#39;t perfect. When you&#39;re done, you put the letter in an envelope and put it in the mailbox down at the front of your office building.
 
 You think to yourself, &quot;I hope this works...&quot;, anxious about what&#39;s in store. Now, all you can do is continue to look through what you have in the office or come back the next day to see the new letter.
 
-[[Leave the office and go to sleep|Entrance]]
-[[Keep looking through the office|Desk]]
+[[&gt;&gt;Leave the office and go to sleep&lt;&lt;|Entrance]]
+[[&gt;&gt;Keep looking through the office&lt;&lt;|Desk]]
 
 {
 (if: $numLucienLetters is 1 and (not($letterRecipient is &quot;Lucien&quot;))) [
@@ -400,7 +405,9 @@ You think to yourself, &quot;I hope this works...&quot;, anxious about what&#39;
 Это письмо о прекращении и воздержании от Организации. Пожалуйста, прекратите обращаться к нам, и мы избавим вас.
 ]
 
-}</tw-passagedata><tw-passagedata pid="21" name="Calendar" tags="" position="1382,875.4000244140625" size="100,100">The calendar reads that today is $month/$day/85</tw-passagedata><tw-passagedata pid="22" name="Entrance" tags="" position="913,1431" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="21" name="Calendar" tags="" position="1517,888.4000244140625" size="100,100">The calendar reads that today is $month/$day/85
+
+[[&gt;&gt;Go back to desk&lt;&lt;|Desk]]</tw-passagedata><tw-passagedata pid="22" name="Entrance" tags="" position="749,1480" size="100,100">{
 (event: when time &gt; 3s) [
 (set: $day to $day+1)
 (if: $day is 31) [
@@ -413,12 +420,15 @@ You think to yourself, &quot;I hope this works...&quot;, anxious about what&#39;
 ]
 (set: $numMysteryManLetters to $numMysteryManLetters+1)
 
+
 (if: $letterRecipient is &quot;Alexandre&quot;) [
 	(set: $numAlexandreLetters to $numAlexandreLetters+1)
 ]
 (elseif: $letterRecipient is &quot;Lucien&quot;) [
 	(set: $numLucienLetters to $numLucienLetters+1)
 ]
+(set: $letterRecipient to &quot;noone&quot;)
+
 (if: $numMysteryManLetters is 1 or ($numMysteryManLetters &gt; 2)) [
   You enter your office&#39;s building the next day, ready to keep putting aside your work in order to help find Pierre. You take off your coat and you head in, trying to figure out what to do next.
   (if: not($letterRecipient is &quot;noone&quot;)) [
@@ -441,6 +451,7 @@ You think to yourself, &quot;I hope this works...&quot;, anxious about what&#39;
 	
 	]
 ]
+&lt;br&gt;
 &lt;br&gt;
 You head up to your office and enter the room.
 (set: $readMysteryManLetter to false)
@@ -532,33 +543,33 @@ You head up to your office and enter the room.
 
 
 
-}</tw-passagedata><tw-passagedata pid="24" name="Choose Letter" tags="" position="1474,995.4000244140625" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="24" name="Choose Letter" tags="" position="1673,1229.4000244140625" size="100,100">{
 (if: $letterChoice is &quot;Lucien&quot;) [
 	Lucien Letters
 	&lt;br&gt;
 	(if: $numLucienLetters &gt;=0) [
-		(link: &quot;Letter 1&quot;) [
+		(link: &quot;&gt;&gt;Read Letter 1&lt;&lt;&quot;) [
 			(set: $letterBeingRead to &quot;Lucien&quot;+(text:0))
 			(goto: &quot;ReadFatherLetters&quot;)
 		]
 		&lt;br&gt;
 	]
 	(if: $numLucienLetters &gt;=1) [
-		(link: &quot;Letter 2&quot;) [
+		(link: &quot;&gt;&gt;Read Letter 2&lt;&lt;&quot;) [
 			(set: $letterBeingRead to &quot;Lucien&quot;+(text:1))
 			(goto: &quot;ReadFatherLetters&quot;)
 		]
 		&lt;br&gt;
 	]
 	(if: $numLucienLetters &gt;= 2) [
-		(link: &quot;Letter 3&quot;) [
+		(link: &quot;&gt;&gt;Read Letter 3&lt;&lt;&quot;) [
 			(set: $letterBeingRead to &quot;Lucien&quot;+(text:2))
 			(goto: &quot;ReadFatherLetters&quot;)
 		]
 		&lt;br&gt;
 	]
 	(if: $numLucienLetters &gt;= 3) [
-		(link: &quot;Letter 4&quot;) [
+		(link: &quot;&gt;&gt;Read Letter 4&lt;&lt;&quot;) [
 			(set: $letterBeingRead to &quot;Lucien&quot;+(text:3))
 			(goto: &quot;ReadFatherLetters&quot;)
 		]
@@ -570,28 +581,28 @@ You head up to your office and enter the room.
 		Alexandre Letters
 		&lt;br&gt;
 		(if: $numAlexandreLetters &gt;=0) [
-		(link: &quot;Letter 1&quot;) [
+		(link: &quot;&gt;&gt;Read Letter 1&lt;&lt;&quot;) [
 			(set: $letterBeingRead to &quot;Alexandre&quot;+(text:0))
 			(goto: &quot;ReadAlexandreLetters&quot;)
 		]
 		&lt;br&gt;
 	]
 	(if: $numAlexandreLetters &gt;=1) [
-		(link: &quot;Letter 2&quot;) [
+		(link: &quot;&gt;&gt;Read Letter 2&lt;&lt;&quot;) [
 			(set: $letterBeingRead to &quot;Alexandre&quot;+(text:1))
 			(goto: &quot;ReadAlexandreLetters&quot;)
 		]
 		&lt;br&gt;
 	]
 	(if: $numAlexandreLetters &gt;= 2) [
-		(link: &quot;Letter 3&quot;) [
+		(link: &quot;&gt;&gt;Read Letter 3&lt;&lt;&quot;) [
 			(set: $letterBeingRead to &quot;Alexandre&quot;+(text:2))
 			(goto: &quot;ReadAlexandreLetters&quot;)
 		]
 		&lt;br&gt;
 	]
 	(if: $numAlexandreLetters &gt;= 3) [
-		(link: &quot;Letter 4&quot;) [
+		(link: &quot;&gt;&gt;Read Letter 4&lt;&lt;&quot;) [
 			(set: $letterBeingRead to &quot;Alexandre&quot;+(text:3))
 			(goto: &quot;ReadAlexandreLetters&quot;)
 		]
@@ -603,21 +614,21 @@ You head up to your office and enter the room.
 		The Mystery Man Letters
 		&lt;br&gt;
 	(if: $numMysteryManLetters &gt;= 1) [
-		  (link: &quot;Letter 1&quot;) [
+		  (link: &quot;&gt;&gt;Read Letter 1&lt;&lt;&quot;) [
 			  (set: $letterBeingRead to &quot;MysteryMan&quot;+(text:1))
 			  (goto: &quot;ReadMysteryManLetters&quot;)
 		  ]
 		  &lt;br&gt;
 	]
 	(if: $numMysteryManLetters &gt;= 2) [
-		(link: &quot;Letter 2&quot;) [
+		(link: &quot;&gt;&gt;Read Letter 2&lt;&lt;&quot;) [
 			(set: $letterBeingRead to &quot;MysteryMan&quot;+(text:2))
 			(goto: &quot;ReadMysteryManLetters&quot;)
 		]
 		&lt;br&gt;
 	]
 	(if: $numMysteryManLetters &gt;= 3) [
-		(link: &quot;Letter 3&quot;) [
+		(link: &quot;&gt;&gt;Read Letter 3&lt;&lt;&quot;) [
 			(set: $letterBeingRead to &quot;MysteryMan&quot;+(text:3))
 			(goto: &quot;ReadMysteryManLetters&quot;)
 		]
@@ -626,21 +637,21 @@ You head up to your office and enter the room.
 ]
 
 &lt;br&gt;
-[[Go back|Letters On Desk]]
+[[&gt;&gt;Go back&lt;&lt;|Letters On Desk]]
 
-}</tw-passagedata><tw-passagedata pid="25" name="ReadMysteryManLetters" tags="" position="1538,1220.4000244140625" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="25" name="ReadMysteryManLetters" tags="" position="1513,1227.4000244140625" size="100,100">{
 (display: &quot;Mystery Man Letter&quot;)
 (display: &quot;end-of-line&quot;)
 (display: &quot;Letter Responses&quot;)
 &lt;br&gt;
 (if: $letterRecipient is &quot;noone&quot; and $letterBeingRead is &quot;MysteryMan&quot;+(text: $numMysteryManLetters)) [
-	(link: &quot;Write a letter to the Mystery Man&quot;)[
+	(link: &quot;&gt;&gt;Write a letter to the Mystery Man&lt;&lt;&quot;)[
 			(set: $letterRecipient to &quot;The Mystery Man&quot;)
 			(goto: &quot;Write Letter&quot;)
 	]
+	&lt;br&gt;
 ]
-&lt;br&gt;
-[[Go back|Letters On Desk]]
+[[&gt;&gt;Go back&lt;&lt;|Letters On Desk]]
 }</tw-passagedata><tw-passagedata pid="26" name="Mystery Man Letter" tags="" position="164,1160" size="100,100">
 {
 (set: $readMysteryManLetter to true)
@@ -663,7 +674,7 @@ You head up to your office and enter the room.
 
 ]
 
-}</tw-passagedata><tw-passagedata pid="27" name="Window" tags="" position="1351,694" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="27" name="Window" tags="" position="1511,744" size="100,100">{
 (if: ($day is 16) and ($month is 2) and ($year is 1985)) [
 	You stare outside of the window and see the birds you were looking at earlier. &quot;I thought they were on the other branch...&quot; you think to yourself, before realizing that you have something more important to attend to.
 ]
@@ -677,10 +688,11 @@ You head up to your office and enter the room.
 ]
 
 	&lt;br&gt;
-	[[Back|Desk]]
-}</tw-passagedata><tw-passagedata pid="28" name="Bad Ending" tags="" position="1115,1634.800048828125" size="100,100">You go home once again, worrying about the safety of Pierre. There&#39;s not much you can do at this point since you already sent your letter to $letterRecipient, so you sleep it off and then wake up the next day to go to work.
+	&lt;br&gt;
+	[[&gt;&gt;Go back to desk&lt;&lt;|Desk]]
+}</tw-passagedata><tw-passagedata pid="28" name="Bad Ending" tags="" position="841,1643.800048828125" size="100,100">You go home once again, worrying about the safety of Pierre. There&#39;s not much you can do at this point since you already sent your letter to $letterRecipient, so you sleep it off and then wake up the next day to go to work.
 
-[[Go to work|Bad Ending Continued]]</tw-passagedata><tw-passagedata pid="29" name="Bad Ending Continued" tags="" position="1105,1781.800048828125" size="100,100">{
+[[&gt;&gt;Go to work&lt;&lt;|Bad Ending Continued]]</tw-passagedata><tw-passagedata pid="29" name="Bad Ending Continued" tags="" position="834,1803.800048828125" size="100,100">{
 When you get to work you immediately check your mailbox where you see a letter marked in a seemingly official government envelope. This is very different from the other letters you have been receiving and so you (link-reveal: &quot;open it immediately.&quot;) [
 &lt;br&gt;
 (display: &quot;end-of-line&quot;)
@@ -690,7 +702,7 @@ Why did [[you|Bad Ending Finish]] do this? I was trying to help you! The Organiz
 --L&#39;Homme Mystérieux
 &lt;br&gt;
 ]
-}</tw-passagedata><tw-passagedata pid="30" name="Bad Ending Finish" tags="" position="1183,1936.800048828125" size="100,100">You have reached one of the bad endings. You don&#39;t know what happened to Pierre, nor do you really want to know.</tw-passagedata><tw-passagedata pid="31" name="Safe sent by Mystery Man" tags="" position="1376.400001525879,249.8000030517578" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="30" name="Bad Ending Finish" tags="" position="907,1945.800048828125" size="100,100">You have reached one of the bad endings. You don&#39;t know what happened to Pierre, nor do you really want to know.</tw-passagedata><tw-passagedata pid="31" name="Safe sent by Mystery Man" tags="" position="1114.400001525879,178" size="100,100">{
 (if: not($codeCracked)) [
   The safe currently reads: $guess
   &lt;br&gt;
@@ -698,57 +710,57 @@ Why did [[you|Bad Ending Finish]] do this? I was trying to help you! The Organiz
 	  (goto: &quot;Cracked the code&quot;)
   ]
   &lt;br&gt;
-  (link: &quot;Press 0&quot;) [
+  (link: &quot;&gt;&gt;Press 0&lt;&lt;&quot;) [
 	  (set: $guess to $guess+&quot;0&quot;)
 	  (goto: &quot;Safe sent by Mystery Man&quot;)
   ]
   &lt;br&gt;
-  (link: &quot;Press 1&quot;) [
+  (link: &quot;&gt;&gt;Press 1&lt;&lt;&quot;) [
 	  (set: $guess to $guess+&quot;1&quot;)
 	  (goto: &quot;Safe sent by Mystery Man&quot;)
   ]
   &lt;br&gt;
-  (link: &quot;Press 2&quot;) [
+  (link: &quot;&gt;&gt;Press 2&lt;&lt;&quot;) [
 	  (set: $guess to $guess+&quot;2&quot;)
 	  (goto: &quot;Safe sent by Mystery Man&quot;)
   ]
   &lt;br&gt;
-  (link: &quot;Press 3&quot;) [
+  (link: &quot;&gt;&gt;Press 3&lt;&lt;&quot;) [
 	  (set: $guess to $guess+&quot;3&quot;)
 	  (goto: &quot;Safe sent by Mystery Man&quot;)
   ]
   &lt;br&gt;
-  (link: &quot;Press 4&quot;) [
+  (link: &quot;&gt;&gt;Press 4&lt;&lt;&quot;) [
 	  (set: $guess to $guess+&quot;4&quot;)
 	  (goto: &quot;Safe sent by Mystery Man&quot;)
   ]
   &lt;br&gt;
-  (link: &quot;Press 5&quot;) [
+  (link: &quot;&gt;&gt;Press 5&lt;&lt;&quot;) [
 	  (set: $guess to $guess+&quot;5&quot;)
 	  (goto: &quot;Safe sent by Mystery Man&quot;)
   ]
   &lt;br&gt;
-  (link: &quot;Press 6&quot;) [
+  (link: &quot;&gt;&gt;Press 6&lt;&lt;&quot;) [
 	  (set: $guess to $guess+&quot;6&quot;)
 	  (goto: &quot;Safe sent by Mystery Man&quot;)
   ]
   &lt;br&gt;
-  (link: &quot;Press 7&quot;) [
+  (link: &quot;&gt;&gt;Press 7&lt;&lt;&quot;) [
 	  (set: $guess to $guess+&quot;7&quot;)
 	  (goto: &quot;Safe sent by Mystery Man&quot;)
   ]
   &lt;br&gt;
-  (link: &quot;Press 8&quot;) [
+  (link: &quot;&gt;&gt;Press 8&lt;&lt;&quot;) [
 	  (set: $guess to $guess+&quot;8&quot;)
 	  (goto: &quot;Safe sent by Mystery Man&quot;)
   ]
   &lt;br&gt;
-  (link: &quot;Press 9&quot;) [
+  (link: &quot;&gt;&gt;Press 9&lt;&lt;&quot;) [
 	  (set: $guess to $guess+&quot;9&quot;)
 	  (goto: &quot;Safe sent by Mystery Man&quot;)
   ]
   &lt;br&gt;
-  (link: &quot;Clear&quot;) [
+  (link: &quot;&gt;&gt;Clear&lt;&lt;&quot;) [
 	  (set: $guess to &quot;&quot;)
 	  (goto: &quot;Safe sent by Mystery Man&quot;)
   ]
@@ -757,72 +769,83 @@ Why did [[you|Bad Ending Finish]] do this? I was trying to help you! The Organiz
 (else:)[
 	(goto: &quot;Continue examining box&quot;)
 ]
-[[Leave the safe|Location Display]]
+[[&gt;&gt;Leave the safe&lt;&lt;|Location Display]]
 
 }</tw-passagedata><tw-passagedata pid="32" name="Cracked the code" tags="" position="1688.2000007629395,361" size="100,100">{
 (set: $codeCracked to true)
 SUCCESS!
 &lt;br&gt;
+&lt;br&gt;
 The safe door slides open and inside you find a small wooden box. Upon immediate inspection, it is not clear what exactly what the box holds or how you are supposed to get inside of it. As you carefully inspect the box, you notice that at the bottom it lists a quote that you remember from &quot;Le Petit Prince,&quot; or &quot;The Little Prince&quot; in English. It was Pierre&#39;s favorite story as a child and you remember writing to him a lot about it in your previous letters between each other.
 &lt;br&gt;
-[[Continue examining the box|Continue examining box]]
+&lt;br&gt;
+[[&gt;&gt;Continue examining the box&lt;&lt;|Continue examining box]]
 
 
-}</tw-passagedata><tw-passagedata pid="33" name="Open Mystery Man Package" tags="" position="950,506" size="100,100">You begin to rip through the cardboard box that was sent to you and notice what looks like a safe as The Mystery Man originally told you. As you stare at it, you think to yourself, &quot;It seems totally plausible that he was bluffing and has no idea what is inside the safe. After all, if he somehow can access your mail to send you his letters in other envelopes, why couldn&#39;t he get into the package delivery system?&quot;
+}</tw-passagedata><tw-passagedata pid="33" name="Open Mystery Man Package" tags="" position="1081,493" size="100,100">{
+(if: $codeCracked) [
+	(goto: &quot;Cracked the code&quot;)
+]
+}
+You begin to rip through the cardboard box that was sent to you and notice what looks like a safe as The Mystery Man originally told you. As you stare at it, you think to yourself, &quot;It seems totally plausible that he was bluffing and has no idea what is inside the safe. After all, if he somehow can access your mail to send you his letters in other envelopes, why couldn&#39;t he get into the package delivery system?&quot;
 
 
-Do you [[try to access the safe?|Safe sent by Mystery Man]]
-[[Go back|Desk]]</tw-passagedata><tw-passagedata pid="34" name="Short story" tags="" position="1273.2000007629395,536" size="100,100">The text on the bottom of the box reads, &quot;[[And|Short story]] [[now|Short story]] [[here|Short story]] [[is|Short story]] [[my|Short story]] [[secret,|Short story]] [[a|Short story]] [[very|Short story]] [[simple|Short story]] [[secret:|Short story]] [[It|Short story]] [[is|Short story]] [[only|Short story]] [[with|Short story]] [[the|Short story]] [[heart|Short story]] [[that|Short story]] [[one|Short story]] [[can|Short story]] [[see|Short story]] [[rightly|Short story]]; [[what|Short story]] [[is|Short story]] [[essential|Short story part 2]] [[is|Short story]] [[invisible|Short story]] [[to|Short story]] [[the|Short story]] [[eye|Short story]]&quot;
+Do you try to get into the safe?
+
+[[&gt;&gt;Try to crack the code&lt;&lt;|Safe sent by Mystery Man]]
+[[&gt;&gt;Go back&lt;&lt;|Desk]]</tw-passagedata><tw-passagedata pid="34" name="Short story" tags="" position="1271.2000007629395,439" size="100,100">The text on the bottom of the box reads, &quot;[[And|Short story]] [[now|Short story]] [[here|Short story]] [[is|Short story]] [[my|Short story]] [[secret,|Short story]] [[a|Short story]] [[very|Short story]] [[simple|Short story]] [[secret:|Short story]] [[It|Short story]] [[is|Short story]] [[only|Short story]] [[with|Short story]] [[the|Short story]] [[heart|Short story]] [[that|Short story]] [[one|Short story]] [[can|Short story]] [[see|Short story]] [[rightly|Short story]]; [[what|Short story]] [[is|Short story]] [[essential|Short story part 2]] [[is|Short story]] [[invisible|Short story]] [[to|Short story]] [[the|Short story]] [[eye|Short story]]&quot;
 &lt;br&gt;
 As you feel around the text at the bottom of the box, it feels as though each word may be a button of some sort. You wonder to yourself, &quot;Perhaps this is how you can get inside of the box? I bet this requires multiple words pressed in the right sequence and then it might open.&quot;
 
-[[Go back|Desk]]</tw-passagedata><tw-passagedata pid="35" name="Continue examining box" tags="" position="1535,565" size="100,100">When you feel over the words of the quote, you feel a tactile bump as if a click is being made when you touch over each of them. At the bottom of the story, it says, 
+[[&gt;&gt;Go back&lt;&lt;|Desk]]</tw-passagedata><tw-passagedata pid="35" name="Continue examining box" tags="" position="1344,587" size="100,100">When you feel over the words of the quote, you feel a tactile bump as if a click is being made when you touch over each of them. At the bottom of the story, it says, 
 (display: &quot;end-of-line&quot;)
+
 IF YOU WANT TO SAVE ME,
-&lt;br&gt;
 LOOK AT THE LETTERS WITHIN THE LETTER.
 (display: &quot;end-of-line&quot;)
-&lt;br&gt;
+
 After reading this, you think, &quot;Could this be it? Is this Pierre?! And what does he mean by &#39;letters within the letter&#39;?&quot; After rereading the letter again, you decide what you want to do.
-&lt;br&gt;
-[[Examine the short story on the box|Short story]]
-[[Go back|Desk]]</tw-passagedata><tw-passagedata pid="36" name="ReadPierreLetter" tags="" position="1261,1224" size="100,100">{
+
+[[&gt;&gt;Examine the short story on the box&lt;&lt;|Short story]]
+[[&gt;&gt;Go back&lt;&lt;|Desk]]</tw-passagedata><tw-passagedata pid="36" name="ReadPierreLetter" tags="" position="1205,1224" size="100,100">{
 (display: &quot;PierreLetter&quot;)
 (display: &quot;end-of-line&quot;)
 &lt;br&gt;
 (if: $inventory contains &quot;ink revealer&quot;) [
-	[[Send letter to the French embassy|Good ending]]
+	[[&gt;&gt;Send letter to the French embassy&lt;&lt;|Good ending]]
 ]
 (else:) [
-	[[Go back|Letters On Desk]]
+	[[&gt;&gt;Go back&lt;&lt;|Letters On Desk]]
 ]
-}</tw-passagedata><tw-passagedata pid="37" name="Short story part 2" tags="" position="1526,374.3999938964844" size="100,100">The text on the bottom of the box reads, &quot;[[And|Short story]] [[now|Short story]] [[here|Short story]] [[is|Short story]] [[my|Short story]] [[secret,|Short story]] [[a|Short story]] [[very|Short story]] [[simple|Short story]] [[secret:|Short story]] [[It|Short story]] [[is|Short story]] [[only|Short story]] [[with|Short story]] [[the|Short story]] [[heart|Short story solved]] [[that|Short story]] [[one|Short story]] [[can|Short story]] [[see|Short story]] [[rightly|Short story]]; [[what|Short story]] [[is|Short story]] [[essential|Short story]] [[is|Short story]] [[invisible|Short story]] [[to|Short story]] [[the|Short story]] [[eye|Short story]]&quot;
+}</tw-passagedata><tw-passagedata pid="37" name="Short story part 2" tags="" position="1297,250" size="100,100">The text on the bottom of the box reads, &quot;[[And|Short story]] [[now|Short story]] [[here|Short story]] [[is|Short story]] [[my|Short story]] [[secret,|Short story]] [[a|Short story]] [[very|Short story]] [[simple|Short story]] [[secret:|Short story]] [[It|Short story]] [[is|Short story]] [[only|Short story]] [[with|Short story]] [[the|Short story]] [[heart|Short story solved]] [[that|Short story]] [[one|Short story]] [[can|Short story]] [[see|Short story]] [[rightly|Short story]]; [[what|Short story]] [[is|Short story]] [[essential|Short story]] [[is|Short story]] [[invisible|Short story]] [[to|Short story]] [[the|Short story]] [[eye|Short story]]&quot;
 &lt;br&gt;
 As you feel around the text at the bottom of the box, it feels as though each word may be a button of some sort. You wonder to yourself, &quot;Perhaps this is how you can get inside of the box? I bet this requires multiple words pressed in the right sequence and then it might open.&quot;
 
-[[Go back|Desk]]</tw-passagedata><tw-passagedata pid="38" name="Short story solved" tags="" position="1728,612.3999938964844" size="100,100">{
-All of a sudden, the top of the box springs off and the rest falls apart. The only things left are a container similar to that of a white-out bottle and a small piece of crumpled paper with writing on it. You look at the note and it says,
-&lt;br&gt;
-(display: &quot;end-of-line&quot;)
-(set: $inventory to $inventory+(a: &quot;ink revealer&quot;))
-Dear John,
-&lt;br&gt;
-&lt;br&gt;
-I&#39;m sorry for all of the puzzles. I had to use them as a security precaution to know that this got to you. Me and The Mystery Man have been trapped in a lab in Siberia as indentured caligraphy servants for the Organization. They told us that we can leave once we hit our 3,000,000 letter quota but I overheard them plotting to move us to a more secure facility soon-- one with no chance of exit or escape.
-&lt;br&gt;
-The liquid I put inside this box was an ink revealer. If you use it on the letter I originally gave you, you should find the GPS coordinate locations of the hideout that we are currently being trapped at. If you send a letter to the French Embassy in the U.S.S.R. they should be able to help. Please hurry, we really have no chance if we are stuck for even one more day here.
-&lt;br&gt;
-&lt;br&gt;
-Sincerely,
-&lt;br&gt;
-P.M.
-(display: &quot;end-of-line&quot;)
-&lt;br&gt;
-Siberia?! Indentured caligraphy servants?! Surely something must be lost in translation right now because this doesn&#39;t make any sense. You pick up the bottle of ink remover contained inside of the box trying to process what is happening.
-&lt;br&gt;
-[[Go to desk|Desk]]
+[[&gt;&gt;Go back&lt;&lt;|Desk]]</tw-passagedata><tw-passagedata pid="38" name="Short story solved" tags="" position="1303,113.39999389648438" size="100,100">{
+  All of a sudden, the top of the box springs off and the rest falls apart. The only things left are a container similar to that of a white-out bottle and a small piece of crumpled paper with writing on it. You look at the note and it says,
+  &lt;br&gt;
+  (display: &quot;end-of-line&quot;)
+  (set: $inventory to $inventory+(a: &quot;ink revealer&quot;))
+  Dear John,
+  &lt;br&gt;
+  &lt;br&gt;
+  I&#39;m sorry for all of the puzzles. I had to use them as a security precaution to know that this got to you. Me and The Mystery Man have been trapped in a lab in Siberia as indentured caligraphy servants for the Organization. They told us that we can leave once we hit our 3,000,000 letter quota but I overheard them plotting to move us to a more secure facility soon-- one with no chance of exit or escape.
+  &lt;br&gt;
+  The liquid I put inside this box was an ink revealer. If you use it on the letter I originally gave you, you should find the GPS coordinate locations of the hideout that we are currently being trapped at. If you send a letter to the French Embassy in the U.S.S.R. they should be able to help. Please hurry, we really have no chance if we are stuck for even one more day here.
+  &lt;br&gt;
+  &lt;br&gt;
+  Sincerely,
+  &lt;br&gt;
+  P.M.
+  (display: &quot;end-of-line&quot;)
+  &lt;br&gt;
+  &lt;br&gt;
+  Siberia?! Indentured caligraphy servants?! Surely something must be lost in translation right now because this doesn&#39;t make any sense. You pick up the bottle of ink remover contained inside of the box trying to process what is happening.
+  &lt;br&gt;
+  &lt;br&gt;
+  [[&gt;&gt;Go to desk&lt;&lt;|Desk]]
 
-}</tw-passagedata><tw-passagedata pid="39" name="Good ending" tags="" position="1573,1452" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="39" name="Good ending" tags="" position="1209,1399" size="100,100">{
 You begin typing out an elaborate letter to the French embassy in the U.S.S.R. detailing all of your knowledge about Pierre and what he and the Mystery Man have told you. As you finish the letter, you start to wonder if the person sending you the letter was even Pierre. 
 &lt;br&gt;
 &lt;br&gt;
@@ -832,11 +855,11 @@ You begin typing out an elaborate letter to the French embassy in the U.S.S.R. d
 Nonetheless, you send the letter and get ready leave the office, unsure of what to do next. Once you are out of the building, you decide that it would be best to go home and just try to rest inside of continuing to lose sleep and worry. After all, you did everything in your power to help save Pierre. The next day, you prepare to go to the office.
 &lt;br&gt;
 &lt;br&gt;
-[[Go to work|Good Ending Continued]]
+[[&gt;&gt;Go to work&lt;&lt;|Good Ending Continued]]
 
-}</tw-passagedata><tw-passagedata pid="40" name="Bad Ending 2" tags="" position="1341.3999938964844,1665.800048828125" size="100,100">You go home once again, worrying about the safety of Pierre. This is the end of the third day and you have not yet found Pierre. Perhaps the Mystery Man was bluffing. There is no way to know what happened so you try to not think about the issue and attempt to fall asleep. The next day you wake up early to go to the office.
+}</tw-passagedata><tw-passagedata pid="40" name="Bad Ending 2" tags="" position="994.3999938964844,1645.800048828125" size="100,100">You go home once again, worrying about the safety of Pierre. This is the end of the third day and you have not yet found Pierre. Perhaps the Mystery Man was bluffing. There is no way to know what happened so you try to not think about the issue and attempt to fall asleep. The next day you wake up early to go to the office.
 
-[[Go to work|Bad Ending 2 Continued]]</tw-passagedata><tw-passagedata pid="41" name="Bad Ending 2 Continued" tags="" position="1341.3999938964844,1815.800048828125" size="100,100">{
+[[&gt;&gt;Go to work&lt;&lt;|Bad Ending 2 Continued]]</tw-passagedata><tw-passagedata pid="41" name="Bad Ending 2 Continued" tags="" position="988.3999938964844,1800.800048828125" size="100,100">{
 When you get to work you immediately check your mailbox where you see a letter marked in a seemingly official government envelope. This is very different from the other letters you have been receiving and so you (link-reveal: &quot;open it immediately.&quot;) [
 &lt;br&gt;
 (display: &quot;end-of-line&quot;)
@@ -846,7 +869,7 @@ The Organization sends its condolences for your [[loss|Bad Ending Finish]].
 --спецназ советской федерации
 &lt;br&gt;
 ]
-}</tw-passagedata><tw-passagedata pid="42" name="Good Ending Continued" tags="" position="1583,1612" size="100,100">When you get to the office, you see Fred putting something into your mailbox. Your heart races with panic, fear, and possibly even excitement at the fact that someone still has a reason to send you letters after all of this. You take the envelope from Fred&#39;s hands and immediately rip into it, blocking out whatever gibberish he is saying. (link-reveal: &quot;You look at the letter and it says:&quot;)[
+}</tw-passagedata><tw-passagedata pid="42" name="Good Ending Continued" tags="" position="1198,1533" size="100,100">When you get to the office, you see Fred putting something into your mailbox. Your heart races with panic, fear, and possibly even excitement at the fact that someone still has a reason to send you letters after all of this. You take the envelope from Fred&#39;s hands and immediately rip into it, blocking out whatever gibberish he is saying. (link-reveal: &quot;You look at the letter and it says:&quot;)[
 
 (display: &quot;end-of-line&quot;)
 Dear John,
@@ -859,7 +882,7 @@ The French Embassy of the U.S.S.R.
 
 
 
-]</tw-passagedata><tw-passagedata pid="43" name="Good Ending Finish" tags="" position="1583,1762" size="100,100">You have successfully saved Pierre and The Mystery Man. Congratulations!</tw-passagedata></tw-storydata>
+]</tw-passagedata><tw-passagedata pid="43" name="Good Ending Finish" tags="" position="1205,1708" size="100,100">You have successfully saved Pierre and The Mystery Man. Congratulations!</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
