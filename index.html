@@ -137,7 +137,7 @@ And as the self-doubt begins to consume you, you feel a panging urge to open the
 	Dear John,
 	&lt;br&gt;
 	&lt;br&gt;
-	I am sorry that I have not written to you in a long time. Unfortunately, I cannot tell you the reason for my absence but I hope that you know I am well. There are some things going on that I thought I should inform you of such as that I am currently being held hostage by the KGB to write letters on behalf of U.S.S.R. for the nation&#39;s Cold War. You see, the Soviet Union decided that it was necessary to not only compete with America in a Space Race, but also a Calligraphy Race. Becaue of my penmanship skills, I was selected to help the Soviets become the world&#39;s most dominant superpower. Also, it is (text-style: &quot;bold&quot;)[essential] that you know that I am currently being held at the coordinates &quot;N 60 degrees, E 100 degrees&quot;. It&#39;s not me who is in charge of this anymore. So, you probably won&#39;t be able to send me any letters for the next few months... or years. But just as I informed you previously, I am (text-style: &quot;italic&quot;)[completely safe]. It breaks my (text-style: &quot;bold&quot;)[heart] that we haven&#39;t been able to talk in so long...
+	I am sorry that I have not written to you in a long time. Unfortunately, I cannot tell you the reason for my absence but I hope that you know I am well. There are some things going on that I thought I should inform you of such as that I am currently being held hostage by the KGB to write letters on behalf of U.S.S.R. and contribute to the nation&#39;s Cold War efforts. You see, the Soviet Union decided that it was necessary to not only compete with America in a Space Race, but also a Calligraphy Race. Becaue of my penmanship skills, I was selected to help the Soviets become the world&#39;s most dominant superpower. Also, it is (text-style: &quot;bold&quot;)[essential] that you know that I am currently being held at the coordinates &quot;N 60 degrees, E 100 degrees&quot;. It&#39;s not me who is in charge of this anymore. So, you probably won&#39;t be able to send me any letters for the next few months... or years. But just as I informed you previously, I am (text-style: &quot;italic&quot;)[completely safe]. It breaks my (text-style: &quot;bold&quot;)[heart] that we haven&#39;t been able to talk in so long...
 	&lt;br&gt;
 	&lt;br&gt;
 	Warm regards,
@@ -209,7 +209,7 @@ As you look up, stacks and stacks of carefully filed letters seem to appear, bec
 }
 [[&gt;&gt;Look out the window&lt;&lt;|Window]]
 [[&gt;&gt;Look at calendar&lt;&lt;|Calendar]]
-[[&gt;&gt;Leave the desk&lt;&lt;|Location Display]]</tw-passagedata><tw-passagedata pid="15" name="Letters On Desk" tags="" position="1187,1059" size="100,100">{
+[[&gt;&gt;Leave the desk&lt;&lt;|Location Display]]</tw-passagedata><tw-passagedata pid="15" name="Letters On Desk" tags="" position="1297,1047.3333333333333" size="100,100">{
 (if: ($day is 16) and ($month is 2) and ($year is 1985)) [
 	You begin to sift through the pile of letters on your desk and notice that most of them are from Pierre&#39;s father and Alexandre. At first glance, the letters from his father seem to be very friendly and courteous, while the letters from Alexandre seem to be mostly about jokes and arranging meet-ups
 	&lt;br&gt;
@@ -237,7 +237,7 @@ As you look up, stacks and stacks of carefully filed letters seem to appear, bec
 (set: $letterBeingRead to &quot;none&quot;)
 
 (if: ($day &gt; 16) and ($month &gt;= 2) and ($year &gt;= 1985)) [
-	(link: &quot;&gt;&gt;Look through the letters from The Mystery Man&lt;&lt;&quot;) [
+	(link: &quot;&gt;Look through the letters from The Mystery Man (new mail received)&lt;&lt;&quot;) [
 		(if: $numMysteryManLetters&gt;1) [
 			(set: $letterChoice to &quot;MysteryMan&quot;)
 			(goto: &quot;Choose Letter&quot;)
@@ -252,7 +252,13 @@ As you look up, stacks and stacks of carefully filed letters seem to appear, bec
 
 [[&gt;&gt;Look through the letter from Pierre&lt;&lt;|ReadPierreLetter]]
 &lt;br&gt;
-(link: &quot;&gt;&gt;Look through the letters from Pierre&#39;s father&lt;&lt;&quot;) [
+(if: $letterRecipient is &quot;Lucien&quot;) [
+	(set: $lucienString to &quot; (new mail received)&quot;)
+]
+(else:) [
+	(set: $lucienString to &quot;&quot;)
+]
+(link: &quot;&gt;&gt;Look through the letters from Pierre&#39;s father&lt;&lt;&quot;+$lucienString) [
 	(if: $numLucienLetters&gt;=1) [
 		(set: $letterChoice to &quot;Lucien&quot;)
 		(goto: &quot;Choose Letter&quot;)
@@ -263,7 +269,13 @@ As you look up, stacks and stacks of carefully filed letters seem to appear, bec
 	]
 ]
 &lt;br&gt;
-(link: &quot;&gt;&gt;Look through the letters from Alexandre&lt;&lt;&quot;) [
+(if: $letterRecipient is &quot;Alexandre&quot;) [
+	(set: $alexandreString to &quot; (new mail received)&quot;)
+]
+(else:) [
+	(set: $alexandreString to &quot;&quot;)
+]
+(link: &quot;&gt;&gt;Look through the letters from Alexandre&lt;&lt;&quot;+$alexandreString) [
 	(if: $numAlexandreLetters&gt;=1) [
 		(set: $letterChoice to &quot;Alexandre&quot;)
 		(goto: &quot;Choose Letter&quot;)
@@ -335,41 +347,55 @@ As you look up, stacks and stacks of carefully filed letters seem to appear, bec
 (if: $letterRecipient is &quot;noone&quot; and $letterBeingRead is &quot;Lucien&quot;+(text: $numLucienLetters)) [
 	(display: &quot;Letter Responses&quot;)
 	&lt;br&gt;
-	(link: &quot;&gt;&gt;Write a letter to Lucien&lt;&lt;&quot;)[
-			(set: $letterRecipient to &quot;Lucien&quot;)
-			(goto: &quot;Write Letter&quot;)	
+	(if: $day is 16) [
+		(set: $sendLetterString to &quot;&gt;&gt;Write a letter to Lucien&lt;&lt; (only one letter can be sent each day)&quot;)
+	]
+	(else:) [
+		(set: $sendLetterString to &quot;&gt;&gt;Write a letter to Lucien&lt;&lt;&quot;)
+	]
+	(link: $sendLetterString)[
+		(set: $letterRecipient to &quot;Lucien&quot;)
+		(goto: &quot;Write Letter&quot;)	
 	]
 	&lt;br&gt;
 ]
 [[&gt;&gt;Go back&lt;&lt;|Letters On Desk]]
-}</tw-passagedata><tw-passagedata pid="18" name="ReadAlexandreLetters" tags="" position="1355,1226" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="18" name="ReadAlexandreLetters" tags="" position="1355,1224.3333333333333" size="100,100">{
 (display: &quot;Alexandre Letter&quot;)
 (display: &quot;end-of-line&quot;)
 (display: &quot;Letter Responses&quot;)
 &lt;br&gt;
 (if: $letterRecipient is &quot;noone&quot; and $letterBeingRead is &quot;Alexandre&quot;+(text: $numAlexandreLetters)) [
-	(link: &quot;&gt;&gt;Write a letter to Alexandre&lt;&lt;&quot;)[
+	(if: $day is 16) [
+		(set: $sendLetterString to &quot;&gt;&gt;Write a letter to Alexandre&lt;&lt; (only one letter can be sent each day)&quot;)
+	]
+	(else:) [
+		(set: $sendLetterString to &quot;&gt;&gt;Write a letter to Alexandre&lt;&lt;&quot;)
+	]
+	(link: $sendLetterString)[
 			(set: $letterRecipient to &quot;Alexandre&quot;)
 			(goto: &quot;Write Letter&quot;)
 	]
 	&lt;br&gt;
 ]
 [[&gt;&gt;Go back&lt;&lt;|Letters On Desk]]
-}</tw-passagedata><tw-passagedata pid="19" name="Write Letter" tags="" position="841,1304" size="100,100">You decide to write a letter to $letterRecipient in order to see if they can help. You try your best to put most of it in French but even with the translation dictionary the tenses aren&#39;t perfect. When you&#39;re done, you put the letter in an envelope and put it in the mailbox down at the front of your office building.
+}</tw-passagedata><tw-passagedata pid="19" name="Write Letter" tags="" position="1102.6666666666667,1059" size="100,100">You decide to write a letter to $letterRecipient in order to see if he can help. You try your best to put most of it in French but even with the translation dictionary the tenses aren&#39;t perfect. When you&#39;re done, you put the letter in an envelope and put it in the mailbox down at the front of your office building.
 
 You think to yourself, &quot;I hope this works...&quot;, anxious about what&#39;s in store. Now, all you can do is continue to look through what you have in the office or come back the next day to see the new letter.
-
-[[&gt;&gt;Leave the office and go to sleep&lt;&lt;|Entrance]]
-[[&gt;&gt;Keep looking through the office&lt;&lt;|Desk]]
-
 {
-(if: $numLucienLetters is 1 and (not($letterRecipient is &quot;Lucien&quot;))) [
+(link: &quot;&gt;&gt;Leave the office and go to sleep&lt;&lt;&quot;)[
+	(if: $numLucienLetters is 1 and (not($letterRecipient is &quot;Lucien&quot;))) [
 	(goto: &quot;Bad Ending&quot;)
 ]
 
 (if: ($day &gt; 18) and ($month &gt;= 2) and ($year &gt;= 1985)) [
 	(goto: &quot;Bad Ending 2&quot;)
 ]
+
+	(goto: &quot;Entrance&quot;)
+]
+&lt;br&gt;
+[[&gt;&gt;Keep looking through the office&lt;&lt;|Desk]]
 }</tw-passagedata><tw-passagedata pid="20" name="Alexandre Letter" tags="" position="167,1044" size="100,100">{
 (if: $letterBeingRead is &quot;Alexandre0&quot;) [
 	Dear Pierre,
@@ -407,7 +433,7 @@ You think to yourself, &quot;I hope this works...&quot;, anxious about what&#39;
 
 }</tw-passagedata><tw-passagedata pid="21" name="Calendar" tags="" position="1517,888.4000244140625" size="100,100">The calendar reads that today is $month/$day/85
 
-[[&gt;&gt;Go back to desk&lt;&lt;|Desk]]</tw-passagedata><tw-passagedata pid="22" name="Entrance" tags="" position="749,1480" size="100,100">{
+[[&gt;&gt;Go back to desk&lt;&lt;|Desk]]</tw-passagedata><tw-passagedata pid="22" name="Entrance" tags="" position="620.6666666666666,1295" size="100,100">{
 (event: when time &gt; 3s) [
 (set: $day to $day+1)
 (if: $day is 31) [
@@ -427,7 +453,7 @@ You think to yourself, &quot;I hope this works...&quot;, anxious about what&#39;
 (elseif: $letterRecipient is &quot;Lucien&quot;) [
 	(set: $numLucienLetters to $numLucienLetters+1)
 ]
-(set: $letterRecipient to &quot;noone&quot;)
+
 
 (if: $numMysteryManLetters is 1 or ($numMysteryManLetters &gt; 2)) [
   You enter your office&#39;s building the next day, ready to keep putting aside your work in order to help find Pierre. You take off your coat and you head in, trying to figure out what to do next.
@@ -453,28 +479,27 @@ You think to yourself, &quot;I hope this works...&quot;, anxious about what&#39;
 ]
 &lt;br&gt;
 &lt;br&gt;
-You head up to your office and enter the room.
+You head up to your office and enter the room. When you get into the office you place the letters you received on top of your previous letters from $letterRecipient.
 (set: $readMysteryManLetter to false)
 (display: &quot;Location Display&quot;)
 ]
 }</tw-passagedata><tw-passagedata pid="23" name="Letter Responses" tags="" position="161,1277.2000122070312" size="100,100">{
 (if: $letterBeingRead is &quot;Lucien0&quot; and $numLucienLetters is 0) [
-	After reading the letter, you begin to feel touched by how kind Lucien is to Pierre. It&#39;s extremely endearing how much he cares about his son and it seems like he would definitely be willing to help with the investigation. However, it does seem kind of eerie that Pierre got a new job without telling you. Looking at the address faintly remaining at the top of the page, you think to yourself, &quot;Should I write a letter to Lucien to see if he can help? My allotted daily mail is only one envelope so this is my only shot for today...&quot;
+	It&#39;s extremely endearing how much Pierre cares about his son and it seems like he would definitely be willing to help with the investigation. However, it does seem kind of eerie that Pierre got a new job without telling you. Looking at the address faintly remaining at the top of the page, you think to yourself, &quot;Should I write a letter to Lucien to see if he can help? My allotted daily mail is only one envelope so this is my only shot for today...&quot;
 	&lt;br&gt;
 ]
 (elseif: $letterBeingRead is &quot;Alexandre0&quot; and $numAlexandreLetters is 0) [
-	After reading the letter, you begin to feel kind of uncomfortable with the fact that Pierre can&#39;t respond to any of these letters because you have them. It seems like he might not have even told anyone that he wasn&#39;t getting their letters. And what&#39;s this about going on vacation? Does Pierre even have enough money for that?
-	&lt;br&gt;
 	You begin to ponder your options and try to decide whether or not you should send a letter to Alexandre to get him to help. He seems like he might be close to Pierre and perhaps he knows something that you don&#39;t. However, your office does only let you send one envelope per day so maybe it would be a good idea to read the other letter before making a decision.
 	&lt;br&gt;
 ]
 (elseif: $letterBeingRead is &quot;MysteryMan1&quot; and $numMysteryManLetters is 1) [
-	You are astonished by what you have just read, continually scanning over the words in denial of what this &quot;Mystery Man&quot; character sent you. The text is in French, so maybe there was something lost in translation? It just doesn&#39;t make sense... how could Pierre be wrapped up in something like this? And what does he mean by &quot;you have 3 days&quot;? Maybe you should send him a letter to get some more information from him? Or is this all some sort of ruse, an attempt to throw you off the trail, or even worse: waste your precious stamps. What you do know is that you need to be really careful with who you choose to send your letters to, since you&#39;re only able to send one each day.
+	You are astonished by what you have just read, continually scanning over the words in denial of what this &quot;Mystery Man&quot; character sent you. The text is in French, so maybe there was something lost in translation? Is this all some sort of ruse, an attempt to throw you off the trail, or even worse: waste your precious stamps. What you do know is that you need to be really careful with who you choose to send your letters to, since you&#39;re only able to send one each day.
 	&lt;br&gt;
 ]
 
 (elseif: $letterBeingRead is &quot;MysteryMan2&quot; and $numMysteryManLetters is 2) [
 	As you read through the letter, you think to yourself, &quot;What does this package have to do with Pierre? How can I trust the Mystery Man? Does Pierre really know him?&quot; The world seems to get hazier and hazier, as your grip on reality continues to fade.
+	&lt;br&gt;
 	(if: $numLucienLetters &gt; 0) [
 		Perhaps it would be a good idea to look through Lucien&#39;s letter to see if he might have left any clues?
 	]
@@ -490,20 +515,21 @@ You head up to your office and enter the room.
 ]
 
 (elseif: $letterBeingRead is &quot;Lucien1&quot; and $numLucienLetters is 1) [
-	Hmm... Lucien seems really keen on wanting to contact the police, as he should. 
+	Hmm... it seems that unless I send a letter to Lucien he will contact the police.
 	(if: $readMysteryManLetter) [
 		You think to yourself, &quot;Maybe I should send him a letter to not do that? After all, the Mystery Man did seem to make that seem like a bad idea...&quot;	
 	]
 	(else:) [
-		You begin to think about what Lucien told you, &quot;We do need as much as support as we can get. Maybe I should write him a letter telling him that I support his idea.&quot;
+		You think to yourself, &quot;Perhaps it would be a good idea to check the Mystery Man&#39;s letter before I do anything.&quot;
 	]
 	&lt;br&gt;
 ]
 
 (elseif: $letterBeingRead is &quot;Lucien2&quot; and $numLucienLetters is 2) [
 	After reading Lucien&#39;s letter, you feel a pang of guilt for not telling him about the Mystery Man or that his son may possibly only have 2 more days left. Since the Mystery Man said you can&#39;t tell anyone about him, it seemed like he was making a threat and that it would be better not to say anything.
+	&lt;br&gt;
 	(if: $readMysteryManLetter) [
-		After thoroughly investigate the letter, you wonder, &quot;What could the Mystery Man have meant when we said that Lucien knows something that would be helpful?&quot;
+		After thoroughly investigate the letter, you wonder, &quot;What could the Mystery Man have meant when we said that Lucien knows something that would be helpful? Perhaps I should check his previous letters to me.&quot;
 	]
 	(else:) [
 		Perhaps it would be a good idea to check the Mystery Man&#39;s letter to see what he told you today?
@@ -869,7 +895,7 @@ The Organization sends its condolences for your [[loss|Bad Ending Finish]].
 --спецназ советской федерации
 &lt;br&gt;
 ]
-}</tw-passagedata><tw-passagedata pid="42" name="Good Ending Continued" tags="" position="1198,1533" size="100,100">When you get to the office, you see Fred putting something into your mailbox. Your heart races with panic, fear, and possibly even excitement at the fact that someone still has a reason to send you letters after all of this. You take the envelope from Fred&#39;s hands and immediately rip into it, blocking out whatever gibberish he is saying. (link-reveal: &quot;You look at the letter and it says:&quot;)[
+}</tw-passagedata><tw-passagedata pid="42" name="Good Ending Continued" tags="" position="1196.3333333333333,1533" size="100,100">When you get to the office, you see Fred putting something into your mailbox. Your heart races with panic, fear, and possibly even excitement at the fact that someone still has a reason to send you letters after all of this. You take the envelope from Fred&#39;s hands and immediately rip into it, blocking out whatever gibberish he is saying. (link-reveal: &quot;You look at the letter and it says:&quot;)[
 
 (display: &quot;end-of-line&quot;)
 Dear John,
