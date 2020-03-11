@@ -68,26 +68,26 @@ ROOM 1
 0,0,0,0,0,0,o,0,0,q,0,0,0,0,0,0
 t,w,v,w,v,w,s,0,0,r,w,v,w,v,w,u
 o,0,0,0,0,0,0,0,0,0,0,0,0,0,0,q
-q,0,0,x,x,x,x,x,x,x,x,x,0,0,0,o
-o,0,x,0,0,0,0,0,0,0,0,0,x,0,0,q
-q,0,x,0,0,x,0,0,0,x,0,0,x,0,0,o
-o,0,x,0,0,0,0,0,0,0,0,0,x,0,0,q
-q,0,x,0,0,0,0,0,0,0,0,0,x,0,0,o
-o,0,x,0,0,0,0,0,0,0,0,0,x,0,0,q
-q,0,x,0,0,x,x,x,x,x,0,0,x,0,0,o
-o,0,x,0,0,x,0,0,0,x,0,0,x,0,0,q
-q,0,x,0,0,x,0,0,0,x,0,0,x,0,0,o
-o,0,x,0,0,0,0,0,0,0,0,0,x,0,0,q
-q,0,0,x,x,x,x,x,x,x,x,x,0,0,0,o
+q,0,0,0,0,0,0,0,0,0,0,0,0,0,0,o
+o,0,0,0,0,0,0,0,0,0,0,0,0,0,0,q
+q,0,0,0,0,0,0,0,0,0,0,0,0,0,0,o
+o,0,0,0,0,0,0,0,0,0,0,0,0,0,0,q
+q,0,0,0,0,x,0,0,0,x,0,0,0,0,0,o
+o,0,0,0,0,0,0,0,0,0,0,0,0,0,0,q
+q,0,0,0,0,0,0,0,0,0,0,0,0,0,0,o
+o,0,0,0,0,x,x,x,x,x,0,0,0,0,0,q
+q,0,0,0,0,x,0,0,0,x,0,0,0,0,0,o
+o,0,0,0,0,x,0,0,0,x,0,0,0,0,0,q
+q,0,0,0,0,0,0,0,0,0,0,0,0,0,0,o
 o,0,0,0,0,0,0,0,0,0,0,0,0,0,0,q
 r,v,w,v,w,v,w,v,w,v,w,v,w,v,w,s
 NAME amygdala 1
 ITM c 7,7
+ITM a 3,12
+ITM f 3,7
+ITM b 11,7
+ITM d 11,12
 ITM e 7,12
-ITM a 4,12
-ITM d 10,12
-ITM f 4,7
-ITM b 10,7
 EXT 7,0 0 7,15
 EXT 8,0 0 8,15
 END 3 2,0
@@ -798,7 +798,7 @@ SPR A
 11001001
 01101011
 00111100
-01011010
+01111010
 01011010
 01111110
 00111100
@@ -1182,40 +1182,40 @@ DLG SPR_7
 DLG ITM_0
 """
 {directions = directions + 1}{
+  - directions == 15 ?
+    John starts to recall where the water fountain is but he can't seem to remember exactly where it is... {clr1}(you need to collect 10 more directions){clr1}
   - directions == 25 ?
     You have now collected enough directions to help John navigate his way to the water fountain! {finishedOccipitalLobe = 1}
-  - else ?
-
 }
 """
 
 DLG ITM_1
 """
 {directions = directions + 1}{
+  - directions == 15 ?
+    John starts to recall where the water fountain is but he can't seem to remember exactly where it is... {clr1}(you need to collect 10 more directions){clr1}
   - directions == 25 ?
     You have now collected enough directions to help John navigate his way to the water fountain! {finishedOccipitalLobe = 1}
-  - else ?
-
 }
 """
 
 DLG ITM_2
 """
 {directions = directions + 1}{
+  - directions == 15 ?
+    John starts to recall where the water fountain is but he can't seem to remember exactly where it is... {clr1}(you need to collect 10 more directions){clr1}
   - directions == 25 ?
     You have now collected enough directions to help John navigate his way to the water fountain! {finishedOccipitalLobe = 1}
-  - else ?
-
 }
 """
 
 DLG ITM_3
 """
 {directions = directions + 1}{
+  - directions == 15 ?
+    John starts to recall where the water fountain is but he can't seem to remember exactly where it is... {clr1}(you need to collect 10 more directions){clr1}
   - directions == 25 ?
     You have now collected enough directions to help John navigate his way to the water fountain! {finishedOccipitalLobe = 1}
-  - else ?
-
 }
 """
 
@@ -1226,7 +1226,7 @@ DLG SPR_9
     Oh... now I remember how to get to the water fountain! Thank goodness, I was feeling quite dehydrated...
     {finishedOccipitalLobe = 1}
   - directions < 25 ?
-    I am not currently able to recall where the water fountain is but I'm so thirsty... maybe if you collect some more of the directions I will be able to figure out how to get there?
+    I am not currently able to recall where the water fountain is but I'm so thirsty... maybe if you collect some more of the directions I will be able to figure out how to get there? ({clr1}{say directions} directions have been collected out of 25{clr1})
 }
 """
 
@@ -1262,11 +1262,11 @@ DLG SPR_8
 DLG SPR_a
 """
 {
-  - {item "exclamation"} + {item "alcohol"} + {item "scary_man"} >= 2 ?
+  - anxiety >= 5 ?
     Is it me or is the room shrinking? This doesn't feel good...(end "John's brain begins to fail as he goes into a panic attack. There is nothing you can do anymore to fix it.")
   - anxiety > 3 ?
     {shk}Now I feel more anxious than I did before!{shk}
-  - {item "headphones"} * {item "elephant"} * {item "tea"} == 1 ?
+  - {item "headphones"} + {item "elephant"} + {item "tea"} > 1 ?
     Thank you for making me feel less anxious Nuri! I feel much better now about losing my wallet.
     {completedAmygdala = 1}
   - else ?
@@ -1288,7 +1288,7 @@ DLG SPR_j
 """
 {
   - directions < 25 ?
-    So... thirsty.... how do I get to the water fountain again?
+    So... thirsty.... how do I get to the water fountain again? ({clr1}{say directions} directions have been collected out of 25{clr1})
   - directions >= 25 ?
     {finishedOccipitalLobe = 1}Thank you so much Nuri! I was able to get to the water fountain and have something to drink so now I'm feeling a bit better.
 }
@@ -1319,9 +1319,9 @@ DLG SPR_k
 DLG SPR_l
 """
 {
-  - {item "exclamation"} + {item "alcohol"} + {item "scary_man"} >= 2 ?
+  - anxiety >= 5 ?
     It seems as though John's {clr1}amygdala {clr1}is completely shutting down due to the anxiety and he is going into a full panic state (end "John's brain begins to fail as he goes into a panic attack. There is nothing you can do anymore to fix it.")
-  - {item "headphones"} * {item "elephant"} * {item "tea"} == 1 ?
+  - {item "headphones"} + {item "elephant"} + {item "tea"} > 1 ?
     Great job, Nuri! John's {clr1}amygdala {clr1}seems to be completely functional now! He seems much less anxious about losing his wallet as well.
     {completedAmygdala = 1}
   - talkedToAmygdalaNeuron == 0 ?
@@ -1339,8 +1339,13 @@ DLG SPR_l
 
 DLG ITM_4
 """
-{anxiety = anxiety - 1}You implanted positive thoughts about elephants into John's brain and it brightened up his day! {wvy}John feels less anxious now{wvy}{
-  - anxiety == 1 ?
+{
+  - completedAmygdala == 0 ?
+    {anxiety = anxiety - 1}You implanted positive thoughts about elephants into John's brain and it brightened up his day! {wvy}John feels less anxious now.{wvy} 
+  - completedAmygdala == 1 ?
+    John's amygdala has been fixed and so he does not need to reduce his anxiety anymore. {wvy}John feels calm{wvy}.
+}{
+  - anxiety - completedAmygdala == 1 ?
     John seems to feel much less worried now! His amygdala has been successfully fixed!
     {completedAmygdala = 1}
 }
@@ -1348,9 +1353,13 @@ DLG ITM_4
 
 DLG ITM_6
 """
-{anxiety = anxiety - 1}You controlled John to listen to some classical music and it helped calm him down. {wvy}John feels less anxious now{wvy}
 {
-  - anxiety == 1 ?
+  - completedAmygdala == 0 ?
+    {anxiety = anxiety - 1}You controlled John to listen to some classical music and it helped calm him down. {wvy}John feels less anxious now. {wvy}
+  - completedAmygdala == 1 ?
+    John's amygdala has been fixed and so he does not need to reduce his anxiety anymore. {wvy}John feels calm{wvy}.
+}{
+  - anxiety - completedAmygdala == 1 ?
     John seems to feel much less worried now! His amygdala has been successfully fixed!
     {completedAmygdala = 1}
 }
@@ -1358,35 +1367,45 @@ DLG ITM_6
 
 DLG ITM_7
 """
-{anxiety = anxiety + 1}You control John to go watch a horror film and a jumpscare causes him to feel extremely scared. Perhaps "Saw" was not actually a guide for novice lumberjacks... {shk}John feels more anxious now.{shk}{
+{
+  - completedAmygdala == 0 ?
+    {anxiety = anxiety + 1}You control John to go watch a horror film and a jumpscare causes him to feel extremely scared. Perhaps "Saw" was not actually a guide for novice lumberjacks... {shk}John feels more anxious now.{shk}
+  - else ?
+    Because John's amygdala is functioning, he is able to avoid feeling more anxious due to interacting with this object.
   - anxiety >= 5 ?
+    (end "John's brain begins to fail as he goes into a panic attack. There is nothing you can do anymore to fix it.")
+}{
+  - {item "scary_man"} + {item "alcohol"} + {item "exclamation"} >= 2 ?
     (end "John's brain begins to fail as he goes into a panic attack. There is nothing you can do anymore to fix it.")
 }
 """
 
 DLG ITM_8
 """
-{anxiety = anxiety + 1}You controlled John to talk to one of the locals in downtown Santa Cruz and he creeped him out. Now John wishes he had his wallet so he could get on the bus and get out...{shk}John feels more anxious now.{shk}{
+{
+  - completedAmygdala == 0 ?
+    {anxiety = anxiety + 1}You controlled John to talk to one of the locals in downtown Santa Cruz and he creeped him out. Now John wishes he had his wallet so he could get on the bus and get out...{shk}John feels more anxious now.{shk}
+  - else ?
+    Because John's amygdala is functioning, he is able to avoid feeling more anxious due to interacting with this object.
   - anxiety >= 5 ?
     (end "John's brain begins to fail as he goes into a panic attack. There is nothing you can do anymore to fix it.")
-}
-"""
-
-DLG ITM_9
-"""
-{anxiety = anxiety - 1}You control John to take a deep breath and have a relaxing cup of tea. His amygdala is starting to get better as he is calming down. {wvy}John feels less anxious now{wvy}
-{
-  - anxiety == 1 ?
-    John seems to feel much less worried now! His amygdala has been successfully fixed!
-    {completedAmygdala = 1}
+}{
+  - {item "scary_man"} + {item "alcohol"} + {item "exclamation"} >= 2 ?
+    (end "John's brain begins to fail as he goes into a panic attack. There is nothing you can do anymore to fix it.")
 }
 """
 
 DLG ITM_a
 """
-{anxiety = anxiety + 1}You control John to have some alcohol and soon after he realizes that he has an assignment that's due at 11:59pm. Maybe this wasn't the right time for that...
-{shk}John feels more anxious now{shk}{
+{
+  - completedAmygdala == 0 ?
+    {anxiety = anxiety + 1}You control John to have some alcohol and soon after he realizes that he has an assignment that's due at 11:59pm. Maybe this wasn't the right time for that... {shk}John feels more anxious now{shk}
+  - else ?
+    Because John's amygdala is functioning, he is able to avoid feeling more anxious due to interacting with this object.
   - anxiety >= 5 ?
+    (end "John's brain begins to fail as he goes into a panic attack. There is nothing you can do anymore to fix it.")
+}{
+  - {item "scary_man"} + {item "alcohol"} + {item "exclamation"} >= 2 ?
     (end "John's brain begins to fail as he goes into a panic attack. There is nothing you can do anymore to fix it.")
 }
 """
@@ -1394,12 +1413,12 @@ DLG ITM_a
 DLG SPR_1
 """
 {
+  - directions >= 25 ?
+    {finishedOccipitalLobe = 1}Great job, Nuri! John was able to make it to the water fountain because you fixed his {clr1}occipital lobe{clr1}. Because of you, he was able to {wvy}quench {wvy}his thirst.
   - talkedToOccipital1Nathan == 0 ?
     {talkedToOccipital1Nathan = 1}Oh no! It seems as though John is feeling dehydrated and so his vision has become impaired. We need to help fix his {clr1}occipital lobe{clr1} so he can see how he can get to the nearest water fountain. {clr2}Try to collect 25 directions so that John can find his way to the water fountain.{clr2}
   - directions < 25 ?
     John still doesn't know how to get to the water fountain. Maybe you should {clr2}try and collect some more directions?{clr2}
-  - directions >= 25 ?
-    {finishedOccipitalLobe = 1}Great job, Nuri! John was able to make it to the water fountain because you fixed his {clr1}occipital lobe{clr1}. Because of you, he was able to {wvy}quench {wvy}his thirst.
 }
 """
 
@@ -1520,6 +1539,20 @@ DLG SPR_e
     Great job, Nuri! John now remembers all of the things he forgot for his chemistry exam and he's feeling more prepared now. The {clr1}hippocampus {clr1}has now been fixed.
   - else ?
     I think the memory is somewhere in this room.
+}
+"""
+
+DLG ITM_9
+"""
+{
+  - completedAmygdala == 0 ?
+    {anxiety = anxiety - 1}You control John to take a deep breath and have a relaxing cup of tea. His amygdala is starting to get better as he is calming down. {wvy}John feels less anxious now. {wvy}
+  - completedAmygdala == 1 ?
+    John's amygdala has been fixed and so he does not need to reduce his anxiety anymore. {wvy}John feels calm{wvy}.
+}{
+  - anxiety - completedAmygdala == 1 ?
+    John seems to feel much less worried now! His amygdala has been successfully fixed!
+    {completedAmygdala = 1}
 }
 """
 
@@ -9837,6 +9870,334 @@ CHAR 255
 </script>
 
 <script>
+(function (bitsy) {
+'use strict';
+
+bitsy = bitsy && bitsy.hasOwnProperty('default') ? bitsy['default'] : bitsy;
+
+/**
+@file utils
+@summary miscellaneous bitsy utilities
+@author Sean S. LeBlanc
+*/
+
+/*
+Helper used to replace code in a script tag based on a search regex
+To inject code without erasing original string, using capturing groups; e.g.
+	inject(/(some string)/,'injected before $1 injected after')
+*/
+function inject(searchRegex, replaceString) {
+	// find the relevant script tag
+	var scriptTags = document.getElementsByTagName('script');
+	var scriptTag;
+	var code;
+	for (var i = 0; i < scriptTags.length; ++i) {
+		scriptTag = scriptTags[i];
+		var matchesSearch = scriptTag.textContent.search(searchRegex) !== -1;
+		var isCurrentScript = scriptTag === document.currentScript;
+		if (matchesSearch && !isCurrentScript) {
+			code = scriptTag.textContent;
+			break;
+		}
+	}
+
+	// error-handling
+	if (!code) {
+		throw 'Couldn\'t find "' + searchRegex + '" in script tags';
+	}
+
+	// modify the content
+	code = code.replace(searchRegex, replaceString);
+
+	// replace the old script tag with a new one using our modified code
+	var newScriptTag = document.createElement('script');
+	newScriptTag.textContent = code;
+	scriptTag.insertAdjacentElement('afterend', newScriptTag);
+	scriptTag.remove();
+}
+
+/**
+ * Helper for getting an array with unique elements 
+ * @param  {Array} array Original array
+ * @return {Array}       Copy of array, excluding duplicates
+ */
+function unique(array) {
+	return array.filter(function (item, idx) {
+		return array.indexOf(item) === idx;
+	});
+}
+
+/**
+
+@file kitsy-script-toolkit
+@summary makes it easier and cleaner to run code before and after Bitsy functions or to inject new code into Bitsy script tags
+@license WTFPL (do WTF you want)
+@version 4.0.1
+@requires Bitsy Version: 4.5, 4.6
+@author @mildmojo
+
+@description
+HOW TO USE:
+  import {before, after, inject, addDialogTag, addDeferredDialogTag} from "./helpers/kitsy-script-toolkit";
+
+  before(targetFuncName, beforeFn);
+  after(targetFuncName, afterFn);
+  inject(searchRegex, replaceString);
+  addDialogTag(tagName, dialogFn);
+  addDeferredDialogTag(tagName, dialogFn);
+
+  For more info, see the documentation at:
+  https://github.com/seleb/bitsy-hacks/wiki/Coding-with-kitsy
+*/
+
+
+// Ex: inject(/(names.sprite.set\( name, id \);)/, '$1console.dir(names)');
+function inject$1(searchRegex, replaceString) {
+	var kitsy = kitsyInit();
+	kitsy.queuedInjectScripts.push({
+		searchRegex: searchRegex,
+		replaceString: replaceString
+	});
+}
+
+// Ex: before('load_game', function run() { alert('Loading!'); });
+//     before('show_text', function run(text) { return text.toUpperCase(); });
+//     before('show_text', function run(text, done) { done(text.toUpperCase()); });
+function before(targetFuncName, beforeFn) {
+	var kitsy = kitsyInit();
+	kitsy.queuedBeforeScripts[targetFuncName] = kitsy.queuedBeforeScripts[targetFuncName] || [];
+	kitsy.queuedBeforeScripts[targetFuncName].push(beforeFn);
+}
+
+// Ex: after('load_game', function run() { alert('Loaded!'); });
+function after(targetFuncName, afterFn) {
+	var kitsy = kitsyInit();
+	kitsy.queuedAfterScripts[targetFuncName] = kitsy.queuedAfterScripts[targetFuncName] || [];
+	kitsy.queuedAfterScripts[targetFuncName].push(afterFn);
+}
+
+function kitsyInit() {
+	// return already-initialized kitsy
+	if (bitsy.kitsy) {
+		return bitsy.kitsy;
+	}
+
+	// Initialize kitsy
+	bitsy.kitsy = {
+		queuedInjectScripts: [],
+		queuedBeforeScripts: {},
+		queuedAfterScripts: {}
+	};
+
+	var oldStartFunc = bitsy.startExportedGame;
+	bitsy.startExportedGame = function doAllInjections() {
+		// Only do this once.
+		bitsy.startExportedGame = oldStartFunc;
+
+		// Rewrite scripts and hook everything up.
+		doInjects();
+		applyAllHooks();
+
+		// Start the game
+		bitsy.startExportedGame.apply(this, arguments);
+	};
+
+	return bitsy.kitsy;
+}
+
+
+function doInjects() {
+	bitsy.kitsy.queuedInjectScripts.forEach(function (injectScript) {
+		inject(injectScript.searchRegex, injectScript.replaceString);
+	});
+	_reinitEngine();
+}
+
+function applyAllHooks() {
+	var allHooks = unique(Object.keys(bitsy.kitsy.queuedBeforeScripts).concat(Object.keys(bitsy.kitsy.queuedAfterScripts)));
+	allHooks.forEach(applyHook);
+}
+
+function applyHook(functionName) {
+	var functionNameSegments = functionName.split('.');
+	var obj = bitsy;
+	while (functionNameSegments.length > 1) {
+		obj = obj[functionNameSegments.shift()];
+	}
+	var lastSegment = functionNameSegments[0];
+	var superFn = obj[lastSegment];
+	var superFnLength = superFn ? superFn.length : 0;
+	var functions = [];
+	// start with befores
+	functions = functions.concat(bitsy.kitsy.queuedBeforeScripts[functionName] || []);
+	// then original
+	if (superFn) {
+		functions.push(superFn);
+	}
+	// then afters
+	functions = functions.concat(bitsy.kitsy.queuedAfterScripts[functionName] || []);
+
+	// overwrite original with one which will call each in order
+	obj[lastSegment] = function () {
+		var returnVal;
+		var args = [].slice.call(arguments);
+		var i = 0;
+
+		function runBefore() {
+			// All outta functions? Finish
+			if (i === functions.length) {
+				return returnVal;
+			}
+
+			// Update args if provided.
+			if (arguments.length > 0) {
+				args = [].slice.call(arguments);
+			}
+
+			if (functions[i].length > superFnLength) {
+				// Assume funcs that accept more args than the original are
+				// async and accept a callback as an additional argument.
+				return functions[i++].apply(this, args.concat(runBefore.bind(this)));
+			} else {
+				// run synchronously
+				returnVal = functions[i++].apply(this, args);
+				if (returnVal && returnVal.length) {
+					args = returnVal;
+				}
+				return runBefore.apply(this, args);
+			}
+		}
+
+		return runBefore.apply(this, arguments);
+	};
+}
+
+function _reinitEngine() {
+	// recreate the script and dialog objects so that they'll be
+	// referencing the code with injections instead of the original
+	bitsy.scriptModule = new bitsy.Script();
+	bitsy.scriptInterpreter = bitsy.scriptModule.CreateInterpreter();
+
+	bitsy.dialogModule = new bitsy.Dialog();
+	bitsy.dialogRenderer = bitsy.dialogModule.CreateRenderer();
+	bitsy.dialogBuffer = bitsy.dialogModule.CreateBuffer();
+}
+
+// Rewrite custom functions' parentheses to curly braces for Bitsy's
+// interpreter. Unescape escaped parentheticals, too.
+function convertDialogTags(input, tag) {
+	return input
+		.replace(new RegExp('\\\\?\\((' + tag + '(\\s+(".+?"|.+?))?)\\\\?\\)', 'g'), function (match, group) {
+			if (match.substr(0, 1) === '\\') {
+				return '(' + group + ')'; // Rewrite \(tag "..."|...\) to (tag "..."|...)
+			}
+			return '{' + group + '}'; // Rewrite (tag "..."|...) to {tag "..."|...}
+		});
+}
+
+
+function addDialogFunction(tag, fn) {
+	var kitsy = kitsyInit();
+	kitsy.dialogFunctions = kitsy.dialogFunctions || {};
+	if (kitsy.dialogFunctions[tag]) {
+		throw new Error('The dialog function "' + tag + '" already exists.');
+	}
+
+	// Hook into game load and rewrite custom functions in game data to Bitsy format.
+	before('parseWorld', function (game_data) {
+		return [convertDialogTags(game_data, tag)];
+	});
+
+	kitsy.dialogFunctions[tag] = fn;
+}
+
+/**
+ * Adds a custom dialog tag which executes the provided function.
+ * For ease-of-use with the bitsy editor, tags can be written as
+ * (tagname "parameters") in addition to the standard {tagname "parameters"}
+ * 
+ * Function is executed immediately when the tag is reached.
+ *
+ * @param {string}   tag Name of tag
+ * @param {Function} fn  Function to execute, with signature `function(environment, parameters, onReturn){}`
+ *                       environment: provides access to SetVariable/GetVariable (among other things, see Environment in the bitsy source for more info)
+ *                       parameters: array containing parameters as string in first element (i.e. `parameters[0]`)
+ *                       onReturn: function to call with return value (just call `onReturn(null);` at the end of your function if your tag doesn't interact with the logic system)
+ */
+function addDialogTag(tag, fn) {
+	addDialogFunction(tag, fn);
+	inject$1(
+		/(var functionMap = new Map\(\);)/,
+		'$1functionMap.set("' + tag + '", kitsy.dialogFunctions.' + tag + ');'
+	);
+}
+
+/**
+ * Adds a custom dialog tag which executes the provided function.
+ * For ease-of-use with the bitsy editor, tags can be written as
+ * (tagname "parameters") in addition to the standard {tagname "parameters"}
+ * 
+ * Function is executed after the dialog box.
+ *
+ * @param {string}   tag Name of tag
+ * @param {Function} fn  Function to execute, with signature `function(environment, parameters){}`
+ *                       environment: provides access to SetVariable/GetVariable (among other things, see Environment in the bitsy source for more info)
+ *                       parameters: array containing parameters as string in first element (i.e. `parameters[0]`)
+ */
+function addDeferredDialogTag(tag, fn) {
+	addDialogFunction(tag, fn);
+	bitsy.kitsy.deferredDialogFunctions = bitsy.kitsy.deferredDialogFunctions || {};
+	var deferred = bitsy.kitsy.deferredDialogFunctions[tag] = [];
+	inject$1(
+		/(var functionMap = new Map\(\);)/,
+		'$1functionMap.set("' + tag + '", function(e, p, o){ kitsy.deferredDialogFunctions.' + tag + '.push({e:e,p:p}); o(null); });'
+	);
+	// Hook into the dialog finish event and execute the actual function
+	after('onExitDialog', function () {
+		while (deferred.length) {
+			var args = deferred.shift();
+			bitsy.kitsy.dialogFunctions[tag](args.e, args.p, args.o);
+		}
+	});
+	// Hook into the game reset and make sure data gets cleared
+	after('clearGameData', function () {
+		deferred.length = 0;
+	});
+}
+
+/**
+ * Adds two custom dialog tags which execute the provided function,
+ * one with the provided tagname executed after the dialog box,
+ * and one suffixed with 'Now' executed immediately when the tag is reached.
+ *
+ * i.e. helper for the (exit)/(exitNow) pattern.
+ *
+ * @param {string}   tag Name of tag
+ * @param {Function} fn  Function to execute, with signature `function(environment, parameters){}`
+ *                       environment: provides access to SetVariable/GetVariable (among other things, see Environment in the bitsy source for more info)
+ *                       parameters: array containing parameters as string in first element (i.e. `parameters[0]`)
+ */
+function addDualDialogTag(tag, fn) {
+	addDialogTag(tag + 'Now', function (environment, parameters, onReturn) {
+		fn(environment, parameters);
+		onReturn(null);
+	});
+	addDeferredDialogTag(tag, fn);
+}
+
+
+
+// Implement the dialog functions
+addDualDialogTag('end', function (environment, parameters) {
+	bitsy.dialogBuffer.EndDialog();
+	bitsy.startNarrating(bitsy.ending[parameters[0]] || parameters[0] || '', true);
+});
+// End of (end) dialog function mod
+
+}(window));
+</script>
+
+<script>
 this.hacks = this.hacks || {};
 (function (exports, bitsy) {
 'use strict';
@@ -11179,335 +11540,6 @@ after('onready', function () {
 exports.hackOptions = hackOptions$1;
 
 }(this.hacks.dialog_audio_vocal_synth = this.hacks.dialog_audio_vocal_synth || {}, window));
-</script>
-
-<script>
-(function (bitsy) {
-'use strict';
-
-bitsy = bitsy && bitsy.hasOwnProperty('default') ? bitsy['default'] : bitsy;
-
-/**
-@file utils
-@summary miscellaneous bitsy utilities
-@author Sean S. LeBlanc
-*/
-
-/*
-Helper used to replace code in a script tag based on a search regex
-To inject code without erasing original string, using capturing groups; e.g.
-	inject(/(some string)/,'injected before $1 injected after')
-*/
-function inject(searchRegex, replaceString) {
-	// find the relevant script tag
-	var scriptTags = document.getElementsByTagName('script');
-	var scriptTag;
-	var code;
-	for (var i = 0; i < scriptTags.length; ++i) {
-		scriptTag = scriptTags[i];
-		var matchesSearch = scriptTag.textContent.search(searchRegex) !== -1;
-		var isCurrentScript = scriptTag === document.currentScript;
-		if (matchesSearch && !isCurrentScript) {
-			code = scriptTag.textContent;
-			break;
-		}
-	}
-
-	// error-handling
-	if (!code) {
-		throw 'Couldn\'t find "' + searchRegex + '" in script tags';
-	}
-
-	// modify the content
-	code = code.replace(searchRegex, replaceString);
-
-	// replace the old script tag with a new one using our modified code
-	var newScriptTag = document.createElement('script');
-	newScriptTag.textContent = code;
-	scriptTag.insertAdjacentElement('afterend', newScriptTag);
-	scriptTag.remove();
-}
-
-/**
- * Helper for getting an array with unique elements 
- * @param  {Array} array Original array
- * @return {Array}       Copy of array, excluding duplicates
- */
-function unique(array) {
-	return array.filter(function (item, idx) {
-		return array.indexOf(item) === idx;
-	});
-}
-
-/**
-
-@file kitsy-script-toolkit
-@summary makes it easier and cleaner to run code before and after Bitsy functions or to inject new code into Bitsy script tags
-@license WTFPL (do WTF you want)
-@version 4.0.1
-@requires Bitsy Version: 4.5, 4.6
-@author @mildmojo
-
-@description
-HOW TO USE:
-  import {before, after, inject, addDialogTag, addDeferredDialogTag} from "./helpers/kitsy-script-toolkit";
-
-  before(targetFuncName, beforeFn);
-  after(targetFuncName, afterFn);
-  inject(searchRegex, replaceString);
-  addDialogTag(tagName, dialogFn);
-  addDeferredDialogTag(tagName, dialogFn);
-
-  For more info, see the documentation at:
-  https://github.com/seleb/bitsy-hacks/wiki/Coding-with-kitsy
-*/
-
-
-// Ex: inject(/(names.sprite.set\( name, id \);)/, '$1console.dir(names)');
-function inject$1(searchRegex, replaceString) {
-	var kitsy = kitsyInit();
-	kitsy.queuedInjectScripts.push({
-		searchRegex: searchRegex,
-		replaceString: replaceString
-	});
-}
-
-// Ex: before('load_game', function run() { alert('Loading!'); });
-//     before('show_text', function run(text) { return text.toUpperCase(); });
-//     before('show_text', function run(text, done) { done(text.toUpperCase()); });
-function before(targetFuncName, beforeFn) {
-	var kitsy = kitsyInit();
-	kitsy.queuedBeforeScripts[targetFuncName] = kitsy.queuedBeforeScripts[targetFuncName] || [];
-	kitsy.queuedBeforeScripts[targetFuncName].push(beforeFn);
-}
-
-// Ex: after('load_game', function run() { alert('Loaded!'); });
-function after(targetFuncName, afterFn) {
-	var kitsy = kitsyInit();
-	kitsy.queuedAfterScripts[targetFuncName] = kitsy.queuedAfterScripts[targetFuncName] || [];
-	kitsy.queuedAfterScripts[targetFuncName].push(afterFn);
-}
-
-function kitsyInit() {
-	// return already-initialized kitsy
-	if (bitsy.kitsy) {
-		return bitsy.kitsy;
-	}
-
-	// Initialize kitsy
-	bitsy.kitsy = {
-		queuedInjectScripts: [],
-		queuedBeforeScripts: {},
-		queuedAfterScripts: {}
-	};
-
-	var oldStartFunc = bitsy.startExportedGame;
-	bitsy.startExportedGame = function doAllInjections() {
-		// Only do this once.
-		bitsy.startExportedGame = oldStartFunc;
-
-		// Rewrite scripts and hook everything up.
-		doInjects();
-		applyAllHooks();
-
-		// Start the game
-		bitsy.startExportedGame.apply(this, arguments);
-	};
-
-	return bitsy.kitsy;
-}
-
-
-function doInjects() {
-	bitsy.kitsy.queuedInjectScripts.forEach(function (injectScript) {
-		inject(injectScript.searchRegex, injectScript.replaceString);
-	});
-	_reinitEngine();
-}
-
-function applyAllHooks() {
-	var allHooks = unique(Object.keys(bitsy.kitsy.queuedBeforeScripts).concat(Object.keys(bitsy.kitsy.queuedAfterScripts)));
-	allHooks.forEach(applyHook);
-}
-
-function applyHook(functionName) {
-	var functionNameSegments = functionName.split('.');
-	var obj = bitsy;
-	while (functionNameSegments.length > 1) {
-		obj = obj[functionNameSegments.shift()];
-	}
-	var lastSegment = functionNameSegments[0];
-	var superFn = obj[lastSegment];
-	var superFnLength = superFn ? superFn.length : 0;
-	var functions = [];
-	// start with befores
-	functions = functions.concat(bitsy.kitsy.queuedBeforeScripts[functionName] || []);
-	// then original
-	if (superFn) {
-		functions.push(superFn);
-	}
-	// then afters
-	functions = functions.concat(bitsy.kitsy.queuedAfterScripts[functionName] || []);
-
-	// overwrite original with one which will call each in order
-	obj[lastSegment] = function () {
-		var returnVal;
-		var args = [].slice.call(arguments);
-		var i = 0;
-
-		function runBefore() {
-			// All outta functions? Finish
-			if (i === functions.length) {
-				return returnVal;
-			}
-
-			// Update args if provided.
-			if (arguments.length > 0) {
-				args = [].slice.call(arguments);
-			}
-
-			if (functions[i].length > superFnLength) {
-				// Assume funcs that accept more args than the original are
-				// async and accept a callback as an additional argument.
-				return functions[i++].apply(this, args.concat(runBefore.bind(this)));
-			} else {
-				// run synchronously
-				returnVal = functions[i++].apply(this, args);
-				if (returnVal && returnVal.length) {
-					args = returnVal;
-				}
-				return runBefore.apply(this, args);
-			}
-		}
-
-		return runBefore.apply(this, arguments);
-	};
-}
-
-function _reinitEngine() {
-	// recreate the script and dialog objects so that they'll be
-	// referencing the code with injections instead of the original
-	bitsy.scriptModule = new bitsy.Script();
-	bitsy.scriptInterpreter = bitsy.scriptModule.CreateInterpreter();
-
-	bitsy.dialogModule = new bitsy.Dialog();
-	bitsy.dialogRenderer = bitsy.dialogModule.CreateRenderer();
-	bitsy.dialogBuffer = bitsy.dialogModule.CreateBuffer();
-}
-
-// Rewrite custom functions' parentheses to curly braces for Bitsy's
-// interpreter. Unescape escaped parentheticals, too.
-function convertDialogTags(input, tag) {
-	return input
-		.replace(new RegExp('\\\\?\\((' + tag + '(\\s+(".+?"|.+?))?)\\\\?\\)', 'g'), function (match, group) {
-			if (match.substr(0, 1) === '\\') {
-				return '(' + group + ')'; // Rewrite \(tag "..."|...\) to (tag "..."|...)
-			}
-			return '{' + group + '}'; // Rewrite (tag "..."|...) to {tag "..."|...}
-		});
-}
-
-
-function addDialogFunction(tag, fn) {
-	var kitsy = kitsyInit();
-	kitsy.dialogFunctions = kitsy.dialogFunctions || {};
-	if (kitsy.dialogFunctions[tag]) {
-		throw new Error('The dialog function "' + tag + '" already exists.');
-	}
-
-	// Hook into game load and rewrite custom functions in game data to Bitsy format.
-	before('parseWorld', function (game_data) {
-		return [convertDialogTags(game_data, tag)];
-	});
-
-	kitsy.dialogFunctions[tag] = fn;
-}
-
-/**
- * Adds a custom dialog tag which executes the provided function.
- * For ease-of-use with the bitsy editor, tags can be written as
- * (tagname "parameters") in addition to the standard {tagname "parameters"}
- * 
- * Function is executed immediately when the tag is reached.
- *
- * @param {string}   tag Name of tag
- * @param {Function} fn  Function to execute, with signature `function(environment, parameters, onReturn){}`
- *                       environment: provides access to SetVariable/GetVariable (among other things, see Environment in the bitsy source for more info)
- *                       parameters: array containing parameters as string in first element (i.e. `parameters[0]`)
- *                       onReturn: function to call with return value (just call `onReturn(null);` at the end of your function if your tag doesn't interact with the logic system)
- */
-function addDialogTag(tag, fn) {
-	addDialogFunction(tag, fn);
-	inject$1(
-		/(var functionMap = new Map\(\);)/,
-		'$1functionMap.set("' + tag + '", kitsy.dialogFunctions.' + tag + ');'
-	);
-}
-
-/**
- * Adds a custom dialog tag which executes the provided function.
- * For ease-of-use with the bitsy editor, tags can be written as
- * (tagname "parameters") in addition to the standard {tagname "parameters"}
- * 
- * Function is executed after the dialog box.
- *
- * @param {string}   tag Name of tag
- * @param {Function} fn  Function to execute, with signature `function(environment, parameters){}`
- *                       environment: provides access to SetVariable/GetVariable (among other things, see Environment in the bitsy source for more info)
- *                       parameters: array containing parameters as string in first element (i.e. `parameters[0]`)
- */
-function addDeferredDialogTag(tag, fn) {
-	addDialogFunction(tag, fn);
-	bitsy.kitsy.deferredDialogFunctions = bitsy.kitsy.deferredDialogFunctions || {};
-	var deferred = bitsy.kitsy.deferredDialogFunctions[tag] = [];
-	inject$1(
-		/(var functionMap = new Map\(\);)/,
-		'$1functionMap.set("' + tag + '", function(e, p, o){ kitsy.deferredDialogFunctions.' + tag + '.push({e:e,p:p}); o(null); });'
-	);
-	// Hook into the dialog finish event and execute the actual function
-	after('onExitDialog', function () {
-		while (deferred.length) {
-			var args = deferred.shift();
-			bitsy.kitsy.dialogFunctions[tag](args.e, args.p, args.o);
-		}
-	});
-	// Hook into the game reset and make sure data gets cleared
-	after('clearGameData', function () {
-		deferred.length = 0;
-	});
-}
-
-/**
- * Adds two custom dialog tags which execute the provided function,
- * one with the provided tagname executed after the dialog box,
- * and one suffixed with 'Now' executed immediately when the tag is reached.
- *
- * i.e. helper for the (exit)/(exitNow) pattern.
- *
- * @param {string}   tag Name of tag
- * @param {Function} fn  Function to execute, with signature `function(environment, parameters){}`
- *                       environment: provides access to SetVariable/GetVariable (among other things, see Environment in the bitsy source for more info)
- *                       parameters: array containing parameters as string in first element (i.e. `parameters[0]`)
- */
-function addDualDialogTag(tag, fn) {
-	addDialogTag(tag + 'Now', function (environment, parameters, onReturn) {
-		fn(environment, parameters);
-		onReturn(null);
-	});
-	addDeferredDialogTag(tag, fn);
-}
-
-
-
-// Implement the dialog functions
-addDualDialogTag('end', function (environment, parameters) {
-	bitsy.dialogBuffer.EndDialog();
-	bitsy.startNarrating(bitsy.ending[parameters[0]] || parameters[0] || '', true);
-});
-// End of (end) dialog function mod
-
-}(window));
-
 </script>
 
 </head>
